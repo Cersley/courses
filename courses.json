@@ -1,0 +1,22 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "avatar": "http://loremflickr.com/255/255",
+      "name": "asdf",
+      "status": "user"
+    },
+    {
+      "id": "2",
+      "avatar": "http://loremflickr.com/255/255",
+      "name": "admin",
+      "status": "admin"
+    },
+    {
+      "id": "3",
+      "avatar": "http://loremflickr.com/255/255",
+      "name": "autodor",
+      "status": "wert"
+    }
+  ]
+}

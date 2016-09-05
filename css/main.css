@@ -1,0 +1,466 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+input:focus:-moz-placeholder {
+	color: transparent;
+}
+input:focus::-moz-placeholder {
+	color: transparent;
+}
+input:focus:-ms-input-placeholder {
+	color: transparent;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	
+}
+body input:required:valid,
+body textarea:required:valid {
+	
+}
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	background-color: #49505b;
+}
+.main {
+	padding-top: 60px;
+}
+.user-log {
+	position: absolute;
+	top: -60px;
+	right: 0;
+	width: 140px;
+	height: 60px;
+	display: inline-block;
+	padding: 13px 5px;
+}
+.img-user {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	position: relative;
+	background-color: #fff;
+	text-align: center;
+	border: 1px solid rgba(154, 157, 160, 0.8);
+	overflow: hidden;
+}
+.img-user i {
+	color: #9a9da0;
+}
+.user-log a {
+	position: absolute;
+	line-height:35px;
+	color: #9a9da0;
+	right: 0;
+	cursor: pointer;
+}
+.user-log a i {
+	padding-left: 5px;
+}
+
+
+/*Шапка*/
+
+
+header {
+	background-color: #4ec4ac;
+	height: 95px;
+	position: relative;
+}
+.logo {
+	display: block;
+	text-align: center;
+	line-height: 95px;
+	width: 100%;
+}
+header .col-md-11 {
+	padding-left: 0;
+}
+header ul {
+	list-style-type: none;
+	margin: 0;
+	position: absolute;
+	top: 5px;
+	padding: 0;
+}
+header ul li {
+	padding: 0 50px;
+}
+header ul .active {
+	background-color: #eef1f4;
+	color: #2f3b4c;
+	border-radius: 3px 3px 0 0;
+}
+header ul a {
+	color: #fff;
+	display: inline-block;
+	line-height: 90px;
+	font-size: 1.1em;
+}
+header ul a:hover, header ul a:active, header ul a:focus  {
+	text-decoration: none;
+}
+
+
+/*Правая навигация*/
+
+
+main {
+	background-color: #eef1f4;
+}
+main .col-md-1{
+	background-color: #2f3b4c;
+	padding: 0;
+}
+menu {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+.menus {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding: 25px 0;
+	border-bottom: 1px solid #3e4b5c;
+}
+.menus p {
+	padding-top: 10px;
+	margin-bottom: 0;
+}
+.menus a {
+	color: #a9bfc7;
+}
+.menus a:hover, menu a:active, menu a:focus {
+	text-decoration: none;
+	color: #fff;
+}
+
+aside .active {
+	background-color: #4f9dce;
+}
+aside .active a, aside .active i {
+	color: #fff;
+}
+
+
+/*Секция курсов*/
+
+
+main .wrapper {
+	position: relative;
+	margin: 10px 0;
+}
+.courses {
+	background-color: #fff;
+	height: 1000px;
+	border: 1px solid #d9dfe5;
+}
+.courses ul  {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	border-bottom: 1px solid #d9dfe5;
+}
+.courses ul a {
+	display: inline-block;
+	height: 95px;
+	color: #90969b;
+	font-size: 1.1em;
+}
+.courses ul li {
+	line-height:95px;
+	display: inline-block;
+	padding: 0 30px;
+	border-right: 1px solid #d9dfe5;
+}
+.courses .active {
+	-webkit-box-shadow: 0 -3px 0 #55addc;
+	-moz-box-shadow: 0 -3px 0 #55addc;
+	box-shadow: 0 -3px 0 #55addc;
+	color: #2f3b4c;
+}
+.courses section {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #d9dfe5;
+	text-align: center;
+	margin: 12px;
+	border-radius: 4px;
+}
+.courses section div {
+	background-color: #f6f8f9;
+	width: 100%;
+	height: 100%;
+}
+.courses section img {
+	width: 140px;
+	height: 140px;
+	background-color: #fff;
+	padding: 4px;
+	border-radius: 4px;
+	border: 1px solid #d9dfe5;
+	margin: 15px 15px 8px 15px;
+}
+.courses section p {
+	text-align: left;
+	margin: 0 0 20px 15px;
+	font-size: 0.9em;
+}
+.courses section a {
+	width: 174px;
+	height: 220px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #2f3b4c;
+	border-radius: 4px;
+}
+.courses section a:hover {
+	text-decoration: none;
+	color: #262e3d;
+}
+.courses section a:hover div {
+	background-color: #eaeced;
+}
+.courses section span {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 34px;
+	height: 34px;
+	background-color: rgba(97, 106, 120, 0.8);
+	cursor: pointer;
+	display: none;
+	border-radius: 2px;
+}
+.courses section span p {
+	text-align: center;
+	color: #fff;
+	font-size: 2.3em;
+	margin: 0;
+	padding: 0;
+	line-height: 30px;
+}
+.courses section:hover span {
+	display: block;
+}
+.courses section span:hover {
+	background-color: rgba(54, 71, 120, 0.8);
+}
+.courses section select {
+	position: absolute;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	right: 4px;
+	bottom: 4px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: transparent;
+}
+.courses section select > option {
+	padding: 10px 20px;
+}
+
+
+/*Setap course main*/
+
+
+.types {
+	position: relative;
+	display: inline-flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.checkbox, .radio {
+	 margin-top: 0;
+	 margin-bottom: 0;
+}
+.types:nth-child(1) {
+	margin-top: 10px;
+}
+
+.item-number, .item-name, .checkbox, .labels, .fases, .resourses {
+	display: inline-flex;
+	height: 100px;
+	border: 1px solid #c3c3c3;
+	background-color: #fff;
+	color: #2f3b4c;
+	text-align: center;
+	line-height:100px;
+}
+.item-number p {
+	width: 100%;
+}
+.item-number {
+	min-width: 100px;
+	font-size: 1.6em;
+}
+.active-item {
+	-webkit-box-shadow: 4px 4px 15px #93948a;
+	-moz-box-shadow:  4px 4px 15px #93948a;
+	box-shadow:  4px 4px 15px #93948a;
+	background-color: #fff;
+	color: #000;
+}
+.item-name {
+	margin-left: 10px;
+	width: 180px;
+	font-size: 1.3em;
+}
+.item-wrap {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 5px;
+}
+.checkbox {
+	margin-left: 5px;
+	width: 100px;
+}
+.checkbox label {
+	padding: 0;
+	font-size: 0.9em;
+	width: inherit;
+}
+.checkbox input {
+	display: none;
+	left: 4px;
+}
+.checkbox input:not(checked) + label:before {
+	content: '';
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+}
+.checkbox input:checked + label:before {
+	content: '\2714';
+	position: absolute;
+	font-size: 1em;
+	line-height: 15px;
+	color: #fff;
+}
+.checkbox:nth-child(1) input:not(checked) + label:before {
+	border: 2px solid #ff0000;
+}
+.checkbox:nth-child(1) input:checked + label:before {
+	background-color: #ff0000;
+}
+.checkbox:nth-child(2) input:not(checked) + label:before {
+	border: 2px solid #800080;
+}
+.checkbox:nth-child(2) input:checked + label:before {
+	background-color: #800080;
+}
+.checkbox:nth-child(3) input:not(checked) + label:before {
+	border: 2px solid #ffc000;
+}
+.checkbox:nth-child(3) input:checked + label:before {
+	background-color: #ffc000;
+}
+.checkbox:nth-child(4) input:not(checked) + label:before {
+	border: 2px solid #f6fac0;
+}
+.checkbox:nth-child(4) input:checked + label:before {
+	background-color: #f6fac0;
+	color: #000;
+}
+.checkbox:nth-child(5) input:not(checked) + label:before {
+	border: 2px solid #80e7b0;
+}
+.checkbox:nth-child(5) input:checked + label:before {
+	background-color: #80e7b0;
+}
+.button-wrap {
+	text-align: center;
+}
+.labels, .fases {
+	width: 169px;
+	margin-left: 15px;
+}
+.labels:nth-child(1), .fases:nth-child(1) {
+	margin-left: 5px;
+}
+.labels p, .item-name p, .fases p, .resourses p {
+	width:inherit;
+}
+.fases {
+	width: 123px;
+}
+.resourses {
+	width: 537px;
+	margin-left: 5px;
+}
+.check-item {
+	background-color: #ff0000;
+	color: #fff;
+}
+
+
+/*Setap course Short Synopsis*/
+
+
+.write-outline {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	background-color: #fff;
+	border: 1px solid #ff0000;
+	margin: 20px 0 15px 0;
+	font-size: 1.3em;
+}
+.write-outline .col-md-3 {
+	border-right: 1px solid #ff0000;
+	line-height: 99px;
+	text-align: center;
+}
+.write-outline form {
+	padding: 12px;
+}
+.write-outline form input {
+	margin-bottom: 5px;
+	text-align: center;
+	border: 1px solid #ff0000;
+	width: 300px;
+}
+.write-outline .col-md-4 {
+	line-height: 100px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
