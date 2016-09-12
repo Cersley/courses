@@ -1,0 +1,63 @@
+<article class="upload-wrapper">
+    <section class="upload-header">
+        <span class="upload-users act-us">Users</span>
+        <button class="btn btn-primary uploads-users-button">Upload users form CSV</button>
+    </section>
+    <section class="uploads-users" >
+        <img ng-src="http://loremflickr.com/70/70" alt="">
+        <ul class="content-description">
+            <li><a href="#/users/user1">{{users[0].name}}</a></li>
+            <li>Email: l@s.com</li>
+            <li>Department: 6.klasse</li>
+            <li>Role: {{users[0].role}}</li>
+            <li>Last logged-in: Aug 26, 2016 2:27 PM</li>
+        </ul>
+        <ul class="users-state">
+            <li ng-repeat="n in [0, 1, 2, 3, 4] track by $index"><i class="fa fa-star" ng-class="{us: $index+1 <= users[0].stars}" aria-hidden="true"></i></li>
+            <!--<li><i class="fa fa-star" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star" aria-hidden="true"></i></li>-->
+            <li><i class="fa fa-comments" aria-hidden="true"></i></li>
+        </ul>
+        <span class="deleter" ng-click=""><p>&times</p></span>
+    </section>
+    <section class="uploads-users">
+        <img ng-src="http://loremflickr.com/70/70" alt="">
+        <ul class="content-description">
+            <li><a href="">{{users[1].name}}</a></li>
+            <li>Email: m@m.com</li>
+            <li>Department: m@m.com</li>
+            <li>Role: {{users[1].role}}</li>
+            <li>Last logged-in: Aug 29, 2016 1:56 PM</li>
+        </ul>
+        <ul class="users-state">
+            <li ng-repeat="n in [0, 1, 2, 3, 4] track by $index"><i class="fa fa-star us" aria-hidden="true"></i></li>
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star" aria-hidden="true"></i></li>-->
+            <li><i class="fa fa-comments" aria-hidden="true"></i></li>
+        </ul>
+        <span class="deleter"><p>&times</p></span>
+    </section>
+    <section class="uploads-users">
+        <img ng-src="http://loremflickr.com/70/70" alt="">
+        <ul class="content-description">
+            <li><a href="">{{users[2].name}}</a></li>
+            <li>Email: aaa@a.com</li>
+            <li>Department: ABC Department</li>
+            <li>Role: {{users[2].role}}</li>
+            <li>Last logged-in: Aug 26, 2016 3:51 PM</li>
+        </ul>
+        <ul class="users-state">
+            <li ng-repeat="n in [0, 1, 2, 3, 4] track by $index"><i class="fa fa-star us" aria-hidden="true"></i></li>
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <!--<li><i class="fa fa-star us" aria-hidden="true"></i></li>-->
+            <li><i class="fa fa-comments" aria-hidden="true"></i></li>
+        </ul>
+        <span class="deleter"><p>&times</p></span>
+    </section>
+</article>

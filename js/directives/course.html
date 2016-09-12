@@ -1,9 +1,10 @@
-<a>
-    <div>
-        <img ng-src="{{course.avatar}}">
-        <p><b>{{course.name}}</b><br>{{course.status}}</p>
-    </div>
-</a>
-<span><p ng-click="severalUsers.courses.splice($index, 1)">&times</p></span>
-<select  ng-model="selected" ng-options="x.name for x in availableCourses"></select>
-
+<div class="course-item">
+    <a href="#redactCourse">
+        <div>
+            <img ng-src="{{course.avatar}}">
+            <p><b>{{course.name}}</b><br>{{course.status}}</p>
+        </div>
+    </a>
+    <span><p ng-click="severalUsers.courses.splice($index, 1)">&times</p></span>
+    <select ng-model="selected" ng-options="x.name for x in availableCourses"></select>
+</div>

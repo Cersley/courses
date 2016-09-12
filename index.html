@@ -6,41 +6,43 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Заголовок</title>
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./libs/font-awesome/css/font-awesome.min.css">
  	<link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <sctipt src="/libs/bootstrap/bootstrap.min.js"></sctipt>
+    <!--<sctipt src="/libs/bootstrap/bootstrap.min.js"></sctipt>-->
     <link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="MainController">
+<body ng-app="myApp" ng-controller="MainController" ng-cloak>
     <div class="container main">
         <div class="row">
             <header>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
                             <span class="logo">
                                 <img src="img/logo.png" alt="logo">
                             </span>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-11 col-sm-11 col-xs-12">
                             <ul>
-                                <a href="#courses"
+                                <a href="#courses/construction"
                                    ng-class="{active: $route.current.activetab === 'courses'}">
                                     <li>My Panel</li>
                                 </a>
                                 <a href="#workspace/selectType"
-                                   ng-class="{active: $route.current.activetab === 'workspace'}"
-                                    ng-focus="changeNameOfAddCourse()">
+                                   ng-click="changeNameOfAddCourse()"
+                                   id="ad"
+                                   ng-class="{active: $route.current.activetab === 'workspace'}">
                                     <li>{{addCourse}}</li>
                                 </a>
                             </ul>
                             <div class="user-log">
                                 <div class="img-user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></div>
-                                <a href="#">a@a.com<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                <a href="">a@a.com<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="toggle-menu" ng-click="triggerMenu()">
+                                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -50,8 +52,8 @@
             <main>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-1">
-                            <aside>
+                        <div class="col-md-1 col-sm-1 main-bg" ng-class="{none: $route.current.activetab === 'redact', height: $route.current.activetab === 'redact' }">
+                            <aside ng-class="{open: actionTriggered}">
                                 <menu>
                                     <div class="menus"
                                          ng-class="{active: $route.current.activetab === 'courses'}">
@@ -74,44 +76,38 @@
                                             <p>Users</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
+                                    <div class="menus" >
+                                        <a>
+                                            <i class="fa fa-users fa-2x" aria-hidden="false"></i>
+                                            <p>Departments</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
+                                    <div class="menus">
+                                        <a>
                                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
+                                            <p>My uploads</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
+                                    <div class="menus">
+                                        <a>
                                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
+                                            <p>Mobile</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
+                                    <div class="menus">
+                                        <a>
                                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
+                                            <p>Activity</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
+                                    <div class="menus">
+                                        <a>
                                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
+                                            <p>Settings</p>
                                         </a>
                                     </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="#users">
+                                    <div class="menus" ng-class="{del: $route.current.activetab === 'redact'}">
+                                        <a>
                                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
                                             <p>Users</p>
                                         </a>
@@ -119,7 +115,7 @@
                                 </menu>
                             </aside>
                         </div>
-                        <div class="col-md-11" ng-controller="MainController">
+                        <div class="col-md-11 col-sm-11 col-xs-12" ng-controller="MainController">
                                 <div ng-view class="wrapper"></div>
                         </div>
                     </div>
@@ -127,9 +123,12 @@
             </main>
         </div>
     </div>
-	<script src="js/common.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="libs/jquery/jquery-3.1.0.min.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/controllers/MainController.js"></script>
     <script src="js/directives/course.js"></script>
+    <script src="js/directives/upload.js"></script>
     <script src="js/services/courses.js"></script>
 </body>
 </html>

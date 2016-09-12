@@ -1,39 +1,44 @@
-app.controller("MainController",  function($scope, $route, courses) {
+app.controller("MainController",  function($scope, $route, courses, uploads) {
     $scope.$route = $route;
-    $scope.addCourse = '+ Add Course';
-    // $scope.changeNameOfAddCourse = function() { //Додумать!!!!!!!!!!!!!
-    //     if (elem.hasClass('.active')) {
-    //         $scope.addCourse = 'Setap Course';
-    //     } else {
-    //         $scope.addCourse = '+ Add Course';
-    //     }
-    //
-    // }
+    $scope.$on('$routeChangeSuccess', function(event, current) {
+        $scope.addCourse = current.activetab === 'workspace' ? 'Setup Course' : '+ Add Course';
+    });
+    $scope.actionTriggered = false;
+    $scope.triggerMenu = function() {
+        $scope.actionTriggered = !$scope.actionTriggered;
+    }
     $scope.availableCourses = [
             {id: '1', name: 'construction'},
             {id: '2', name: 'public'},
             {id: '3', name: 'deletion'},
             {id: '3', name: 'intern'}
         ],
-        $scope.selected = $scope.availableCourses[0];
-    // $scope.courses = [
-    //     {
-    //         avatar: "http://loremflickr.com/255/255",
-    //         name: 'asdf',
-    //         status: 'user'
-    //     },
-    //     {
-    //         avatar: "http://loremflickr.com/255/255",
-    //         name: 'admin',
-    //         status: 'admin'
-    //     },
-    //     {
-    //         avatar: "http://loremflickr.com/255/255",
-    //         name: 'autodor',
-    //         status: 'wert'
-    //     }
-    // ]
+    $scope.selected = $scope.availableCourses[0];
+
     courses.success(function(data) {
         $scope.severalUsers = data;
     })
+    uploads.success(function(data) {
+        $scope.severalUploads = data;
+    })
+    $scope.users = [
+        {
+            name: "Lasse Sanstrom",
+            role: "teacher",
+            password: "lasse",
+            stars: '1'
+        },
+        {
+            name: "m@m.com",
+            role: "teacher",
+            password: "mom",
+            stars: '4'
+        },
+        {
+            name: "Ivan",
+            role: "teacher",
+            password: "ivan",
+            stars: '5'
+        }
+    ];
 })

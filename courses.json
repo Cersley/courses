@@ -18,5 +18,23 @@
       "name": "autodor",
       "status": "wert"
     }
+  ],
+  "uploads": [
+    {
+      "id": "1",
+      "name": "file1",
+      "avatar": "http://loremflickr.com/70/70",
+      "created": "new Data",
+      "size": "54",
+      "check": "1"
+    },
+    {
+      "id": "2",
+      "name": "file2",
+      "avatar": "http://loremflickr.com/70/70",
+      "created": "new Data",
+      "size": "45",
+      "check": "2"
+    }
   ]
 }

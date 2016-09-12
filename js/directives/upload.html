@@ -1,0 +1,12 @@
+<img ng-src={uploads.avatar}} alt="">
+<ul class="content-description">
+    <li>{{upload.name}}</li>
+    <li><span>Created: </span>{{upload.created}}</li>
+    <li><span>Size: </span>{{upload.size}}</li>
+</ul>
+<div class="checkbox">
+    <input type="checkbox" id="{{upload.check}}">
+    <label for="{{upload.check}}"></label>
+</div>
+<!--<input type="checkbox">-->
+<span class="deleter"><p ng-click="severalUploads.uploads.splice($index, 1)">&times</p></span>
