@@ -1,4 +1,4 @@
-app.controller("MainController",  function($scope, $route, courses, uploads, $routeParams) {
+app.controller("MainController",  function($scope, $route, $routeParams, $http) {
     $scope.$route = $route;
     $scope.$routeParams = $routeParams;
     $scope.$on('$routeChangeSuccess', function(event, current) {
@@ -16,12 +16,6 @@ app.controller("MainController",  function($scope, $route, courses, uploads, $ro
         ],
     $scope.selected = $scope.availableCourses[0];
 
-    courses.success(function(data) {
-        $scope.severalUsers = data;
-    })
-    uploads.success(function(data) {
-        $scope.severalUploads = data;
-    })
     $scope.users = [
         {
             name: "Lasse Sanstrom",
@@ -42,4 +36,23 @@ app.controller("MainController",  function($scope, $route, courses, uploads, $ro
             stars: '5'
         }
     ];
+    $scope.formData = {};
+    $scope.coursesData = [];
+    $http.get('/api/courses')
+        .success(function(data, status, headers, config) {
+        // This callback will be called asynchronously
+        // when the response is available
+        console.log('SUCC', data, status, headers, config);
+    })
+        .error(function(data, status, headers, config) {
+        console.error('ERR', data, status, headers, config);
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+    });
+        // .then(function successCallback(courseInfo) {
+        //     console.log('DATA: ', courseInfo);
+        //     $scope.coursesData = courseInfo.data;
+        // }, function errorCallback(err) {
+        //     console.log('error', err);
+        // });
 })
