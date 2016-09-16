@@ -81,7 +81,7 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "js/partials/courses/redact/redactCourse3.html",
             activetab: 'redact'
         })
-        // .otherwise({redirectTo: '/courses/construction'});
+        .otherwise({redirectTo: '/courses/construction'});
     $locationProvider.html5Mode(true);
 
 })

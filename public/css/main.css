@@ -854,7 +854,7 @@ textarea:focus:-ms-input-placeholder {
 
 .redact {
 	position: absolute;
-	left: -144px;
+	left: -143px;
 	top: -105px;
 	background-color: #fff;
 }

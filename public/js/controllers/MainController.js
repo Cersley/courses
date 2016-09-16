@@ -36,23 +36,18 @@ app.controller("MainController",  function($scope, $route, $routeParams, $http) 
             stars: '5'
         }
     ];
-    $scope.formData = {};
-    $scope.coursesData = [];
-    $http.get('/api/courses')
-        .success(function(data, status, headers, config) {
-        // This callback will be called asynchronously
-        // when the response is available
-        console.log('SUCC', data, status, headers, config);
-    })
-        .error(function(data, status, headers, config) {
-        console.error('ERR', data, status, headers, config);
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
+    $scope.formData = formData();
+    $scope.coursesData = {};
+    $http.get('/courses/construction/course')
+        .then(function successCallback(courseInfo) {
+            $scope.coursesData = courseInfo.data;
+        }, function errorCallback(err) {
+            console.log('error', err);
     });
-        // .then(function successCallback(courseInfo) {
-        //     console.log('DATA: ', courseInfo);
-        //     $scope.coursesData = courseInfo.data;
-        // }, function errorCallback(err) {
-        //     console.log('error', err);
-        // });
-})
+    $http.delete('/courses/construction/:courseId')
+        .then(function successCallback(remove) {
+            $scope.formData = remove.data;
+        }, function errorCallback(err) {
+            console.log('error', err);
+        });
+});
