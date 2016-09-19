@@ -813,21 +813,23 @@ textarea:focus:-ms-input-placeholder {
 	padding: 5px;
 	font-size: 0.8em;
 }
-.settings {
+.settings, .create-user {
 	padding: 5px 10px;
 	width: 100%;
-	border: 1px solid #d9dfe5;
 	margin-bottom: 15px;
 }
-.settings form {
+.settings {
+	border: 1px solid #d9dfe5;
+}
+.settings form, .create-user form {
 	margin: 10px 0 10px 20px;
 	position: relative;
 }
-.settings label {
+.settings label, .create-user label{
 	margin: 0;
 	font-weight: normal;
 }
-.settings .input-pass {
+.settings .input-pass, .create-user .input-new {
 	display: block;
 	height: 25px;
 	width: 150px;
@@ -836,10 +838,19 @@ textarea:focus:-ms-input-placeholder {
 	display: inline-block;
 	margin-top: 10px;
 }
-.settings form span {
+.settings form span, .create-user form span {
 	position: absolute;
 	display: inline-block;
+}
+.settings form span {
 	bottom: 1px;
+}
+.create-user form input[type='submit'] {
+	font-size: 1em;
+}
+.show-matches {
+	bottom: 8px;
+	margin-left: 5px;
 }
 .upload-users a {
 	color: #90969b;

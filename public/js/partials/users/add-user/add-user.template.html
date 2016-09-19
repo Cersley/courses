@@ -1,0 +1,51 @@
+<article class="upload-wrapper">
+    <section class="upload-header">
+        <span class="upload-users" id="top"><a href="/users">Users</a></span>
+        <span class="upload-user act-us">Add user</span>
+    </section>
+    <section class="create-user">
+        <span>Create new user:</span>
+        <form name="AddUser" ng-submit="$ctrl.createUser()">
+            <label for="new-name">Name *</label>
+            <input type="text" id="new-name" class="input-new" ng-model="$ctrl.userData.name" required>
+            <label for="new-email">Email *</label>
+            <input type="email" id="new-email" class="input-new" ng-model="$ctrl.userData.email" required>
+            <label for="new-password">Password *</label>
+            <input type="password" id="new-password" class="input-new" ng-model="$ctrl.userData.password" required>
+            <label for="repeat-password">Repeat password *</label>
+            <input type="password" id="repeat-password" class="input-new" ng-model="password2" required>
+            <label for="new-departmant">Departmant</label>
+            <input type="text" id="new-departmant" class="input-new" ng-model="$ctrl.userData.department">
+            <label for="new-role">Role</label>
+            <input type="text" id="new-role" class="input-new" ng-model="$ctrl.userData.role">
+            <label for="new-state">State</label>
+            <input type="text" id="new-state" class="input-new" ng-model="$ctrl.userData.state">
+            <input type="submit"
+                   value="Create"
+                   class="btn btn-primary save-password-btn btn-sm">
+            <span class='show-matches'
+                  ng-show="$ctrl.userData.password !== password2">Passwords don't match</span>
+        </form>
+        <!--<p>-->
+            <!--<span>Username: <b>{{$ctrl.params.userName}}</b></span>-->
+            <!--&lt;!&ndash;<span>Username: <b>{{$ctrl.params.userName}}</b></span>&ndash;&gt;-->
+            <!--<span>Role: {{$ctrl.params.userRole}}</span>-->
+            <!--<span></span>-->
+        <!--</p>-->
+    </section>
+    <!--<div class="settings">-->
+        <!--<span>Settings:</span>-->
+        <!--<form name="password" ng-submit="$ctrl.updateUserPassword($ctrl.params.userId, $ctrl.formInfo.val2)">-->
+            <!--<label for="new-password">Enter new password:</label>-->
+            <!--<input id="new-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val1" required>-->
+            <!--<label for="repeat-password">Repeat new password:</label>-->
+            <!--<input id="repeat-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val2" required>-->
+            <!--<input type="submit"-->
+                   <!--value="save"-->
+                   <!--ng-disabled="$ctrl.formInfo.val1 !== $ctrl.formInfo.val2"-->
+                   <!--class="btn btn-primary save-password-btn btn-sm">-->
+            <!--<span ng-show="$ctrl.formInfo.val1 !== $ctrl.formInfo.val2">Passwords don't match</span>-->
+        <!--</form>-->
+        <!--<span>{{$ctrl.params.userId}}</span>-->
+    <!--</div>-->
+</article>

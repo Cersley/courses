@@ -1,0 +1,29 @@
+<article class="upload-wrapper">
+    <section class="upload-header">
+        <span class="upload-users"><a href="/users">Users</a></span>
+        <span class="upload-user act-us">User</span>
+        <a href="/users/addUser" class="btn btn-primary uploads-users-button">Add user</a>
+    </section>
+    <section class="uploads-user-info">
+        <p>
+            <span>Username: <b>{{$ctrl.params.userName}}</b></span>
+            <!--<span>Username: <b>{{$ctrl.params.userName}}</b></span>-->
+            <span>Role: {{$ctrl.params.userRole}}</span>
+            <span></span>
+        </p>
+    </section>
+    <div class="settings">
+        <span>Settings:</span>
+        <form name="passwordUpdate" ng-submit="$ctrl.updateUserPassword($ctrl.params.userId, $ctrl.formInfo.val1)">
+            <label for="new-password">Enter new password:</label>
+            <input id="new-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val1" required>
+            <label for="repeat-password">Repeat new password:</label>
+            <input id="repeat-password" type="password" class="input-pass" ng-model="val2" required>
+            <input type="submit"
+                   value="save"
+                    ng-disabled="$ctrl.formInfo.val1 !== val2"
+                    class="btn btn-primary save-password-btn btn-sm">
+            <span ng-show="$ctrl.formInfo.val1 !== val2">Passwords don't match</span>
+        </form>
+    </div>
+</article>

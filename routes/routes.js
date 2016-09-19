@@ -3,11 +3,13 @@ var router = express.Router();
 
 var db = require('./queries');
 
-router.get('/courses/construction/course', db.getAllCourses);
-// router.get('/api/puppies/:id', db.getSinglePuppy);
-// router.post('/api/puppies', db.createPuppy);
-// router.put('/api/puppies/:id', db.updatePuppy);
-router.delete('/courses/construction/:courseId', db.removeCourse);
+router.get('/courses/course', db.getAllCourses);
+router.put('/courses/update/:courseId', db.updatePlaceCourse);
+router.delete('/courses/remove/:course_id', db.removeCourse);
 
-db.removeCourse()
+router.get('/users/list', db.getAllUsers);
+router.delete('/users/remove/:user_id', db.removeUser);
+router.put('/users/updatePassword/:user_id', db.updateUserPassword);
+router.post('/users/createUser/', db.createUser);
+
 module.exports = router;

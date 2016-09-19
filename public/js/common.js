@@ -1,29 +1,29 @@
-var app = angular.module("myApp", ['ngRoute']);
+var app = angular.module("myApp", ['ngRoute', 'userList', 'userInfo', 'addUser']);
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/courses/construction', {
             templateUrl: "js/partials/courses/construction.html",
-            activetab: 'courses'
+            activetab: 'courses',
+            activedroptab: 'construction'
         })
         .when('/courses/public', {
             templateUrl: "js/partials/courses/public.html",
-            activetab: 'courses'
+            activetab: 'courses',
+            activedroptab: 'public'
         })
         .when('/courses/intern', {
             templateUrl: "js/partials/courses/intern.html",
-            activetab: 'courses'
+            activetab: 'courses',
+            activedroptab: 'intern'
         })
         .when('/courses/deletion', {
             templateUrl: "js/partials/courses/deletion.html",
-            activetab: 'courses'
+            activetab: 'courses',
+            activedroptab: 'deletion'
         })
         .when('/workspace/selectType', {
             templateUrl: "js/partials/workspaces/select-type.html",
             activetab: 'workspace'
-        })
-        .when('/users', {
-            templateUrl: "js/partials/users/users.html",
-            activetab: 'users'
         })
         .when('/workspace/synopsis', {
             templateUrl: "js/partials/workspaces/synopsis.html",
@@ -49,8 +49,18 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "js/partials/workspaces/add-course.html",
             activetab: 'workspace'
         })
-        .when('/users/user1', {
-            templateUrl: "js/partials/users/users1.html",
+        .when('/users/', {
+            template: '<user-list></user-list>',
+            activetab: 'users'
+
+        })
+        .when('/users/:userId/:userName/:userRole', {
+            template: '<user-info></user-info>',
+            activetab: 'users',
+            activeuser: 'user'
+        })
+        .when('/users/addUser', {
+            template: '<add-user></add-user>',
             activetab: 'users'
         })
         .when('/redactCourse', {

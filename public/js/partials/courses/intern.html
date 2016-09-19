@@ -5,7 +5,20 @@
         <a href="/courses/intern" class="active"><li>Intern items</li></a>
         <a href="/courses/deletion"><li>Deletion items</li></a>
     </ul>
-    <section ng-repeat="course in coursesData">
-        <course></course>
+    <section ng-repeat="course in coursesData | filter : {place: 'intern'} : true">
+        <div class="course-item">
+            <a href="/redactCourse">
+                <div>
+                    <img ng-src="img/{{course.avatar}}">
+                    <p><b>{{course.name}}</b><br>{{course.status}}</p>
+                </div>
+            </a>
+            <span><p ng-click="removeCourse(course.id, item)">&times</p></span>
+            <select ng-model="selected"
+                    ng-options="x as x.name for x in availableCourses"
+                    ng-change="updatePlaceCourse(course.id, selected.name)">
+            </select>
+        </div>
+
     </section>
 </article>

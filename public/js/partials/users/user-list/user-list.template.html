@@ -1,0 +1,23 @@
+<article class="upload-wrapper">
+    <section class="upload-header">
+        <span class="upload-users act-us" id="top">Users</span>
+        <a href="/users/addUser" class="btn btn-primary uploads-users-button" ng-click="$ctrl.goToUser()">Add user</a>
+    </section>
+    <section class="uplads-list" ng-repeat="user in $ctrl.usersData">
+        <section class="uploads-users">
+            <img ng-src="img/{{user.avatar}}" alt="">
+            <ul class="content-description">
+                <li><a href="/users/{{user.id}}/{{user.name}}/{{user.role}}" ng-click="$ctrl.goToUser()">{{user.name}}</a></li>
+                <li>Email: {{user.email}}</li>
+                <li>Department: {{user.department}}</li>
+                <li>Role: {{user.role}}</li>
+                <li>Last logged-in: {{user.lastlogged}}</li>
+            </ul>
+            <ul class="users-state">
+                <li ng-repeat="n in [0, 1, 2, 3, 4]"><i class="fa fa-star" ng-class="{us: $index+1 <= user.stars}" aria-hidden="true"></i></li>
+                <li><i class="fa fa-comments" aria-hidden="true"></i></li>
+            </ul>
+            <span class="deleter" ng-click="$ctrl.removeUser(user.id, $index)"><p>&times</p></span>
+        </section>
+    </section>
+</article>
