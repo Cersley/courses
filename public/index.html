@@ -31,7 +31,7 @@
                                    ng-class="{active: $route.current.activetab === 'courses'}">
                                     <li>My Panel</li>
                                 </a>
-                                <a href="/workspace/selectType"
+                                <a href="/workspace"
                                    ng-click="changeNameOfAddCourse()"
                                    id="ad"
                                    ng-class="{active: $route.current.activetab === 'workspace'}">
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="menus"
                                          ng-class="{active: $route.current.activetab === 'workspace'}">
-                                        <a href="/workspace/selectType">
+                                        <a href="/workspace">
                                             <i class="fa fa-clone fa-2x" aria-hidden="true"></i>
                                             <p>Workspace</p>
                                         </a>
@@ -126,6 +126,7 @@
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script src="https://npmcdn.com/@angular/router@0.2.0/angular1/angular_1_router.js"></script>
     <script src="../../libs/jquery/jquery-3.1.0.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/controllers/MainController.js"></script>
@@ -135,5 +136,7 @@
     <script src="../../js/partials/users/user-info/user-info.component.js"></script>
     <script src="../../js/partials/users/add-user/add-user.module.js"></script>
     <script src="../../js/partials/users/add-user/add-user.component.js"></script>
+    <script src="../../js/partials/workspaces/work-space.module.js"></script>
+    <script src="../../js/partials/workspaces/work-space.component.js"></script>
 </body>
 </html>

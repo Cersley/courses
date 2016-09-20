@@ -8,7 +8,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>yaroslav</user-name>
-      <introspection-scope>courses_editor:public,pg_catalog,yaroslav</introspection-scope>
+      <introspection-scope>courses_editor:pg_catalog,public,yaroslav</introspection-scope>
       <resolve-scope>courses_editor:public,yaroslav</resolve-scope>
     </data-source>
   </component>

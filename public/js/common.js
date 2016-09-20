@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'userList', 'userInfo', 'addUser']);
+var app = angular.module("myApp", ['ngRoute', 'workSpace', 'userList', 'userInfo', 'addUser']);
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/courses/construction', {
@@ -21,48 +21,43 @@ app.config(function($routeProvider, $locationProvider) {
             activetab: 'courses',
             activedroptab: 'deletion'
         })
-        .when('/workspace/selectType', {
-            templateUrl: "js/partials/workspaces/select-type.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/synopsis', {
-            templateUrl: "js/partials/workspaces/synopsis.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/nextStage', {
-            templateUrl: "js/partials/workspaces/next-stage.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/discover', {
-            templateUrl: "js/partials/workspaces/discover.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/nextStagef', {
-            templateUrl: "js/partials/workspaces/next-stage-2.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/uploads', {
-            templateUrl: "js/partials/workspaces/uploads.html",
-            activetab: 'workspace'
-        })
-        .when('/workspace/addCourse', {
-            templateUrl: "js/partials/workspaces/add-course.html",
-            activetab: 'workspace'
-        })
-        .when('/users/', {
-            template: '<user-list></user-list>',
-            activetab: 'users'
 
+
+        .when('/workspace', {
+            template: '<work-space></work-space>',
+            activetab: 'workspace'
         })
-        .when('/users/:userId/:userName/:userRole', {
-            template: '<user-info></user-info>',
-            activetab: 'users',
-            activeuser: 'user'
+        .when('/workspace/synopsis/:type', {
+            template: '<synopsis></synopsis>',
+            activetab: 'workspace'
         })
-        .when('/users/addUser', {
-            template: '<add-user></add-user>',
-            activetab: 'users'
-        })
+        // .when('/workspace/synopsis', {
+        //     templateUrl: "js/partials/workspaces/synopsis.template.html",
+        //     activetab: 'workspace'
+        // })
+        // .when('/workspace/nextStage', {
+        //     templateUrl: "js/partials/workspaces/next-stage.html",
+        //     activetab: 'workspace'
+        // })
+        // .when('/workspace/discover', {
+        //     templateUrl: "js/partials/workspaces/discover.html",
+        //     activetab: 'workspace'
+        // })
+        // .when('/workspace/nextStagef', {
+        //     templateUrl: "js/partials/workspaces/next-stage-2.html",
+        //     activetab: 'workspace'
+        // })
+        // .when('/workspace/uploads', {
+        //     templateUrl: "js/partials/workspaces/uploads.html",
+        //     activetab: 'workspace'
+        // })
+        // .when('/workspace/addCourse', {
+        //     templateUrl: "js/partials/workspaces/add-course.html",
+        //     activetab: 'workspace'
+        // })
+
+
+
         .when('/redactCourse', {
             templateUrl: "js/partials/courses/redact/redactCourse.html",
             activetab: 'redact'
@@ -91,7 +86,25 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "js/partials/courses/redact/redactCourse3.html",
             activetab: 'redact'
         })
-        .otherwise({redirectTo: '/courses/construction'});
-    $locationProvider.html5Mode(true);
 
+
+        .when('/users', {
+            template: '<user-list></user-list>',
+            activetab: 'users'
+        })
+        .when('/users/:userId/:userName/:userRole', {
+            template: '<user-info></user-info>',
+            // controller: 'UserListController',
+            activetab: 'users',
+            activeuser: 'user'
+        })
+        .when('/users/addUser', {
+            template: '<add-user></add-user>',
+            activetab: 'users'
+        })
+
+
+        .otherwise({redirectTo: '/courses/construction'});
+
+    $locationProvider.html5Mode(true);
 })
