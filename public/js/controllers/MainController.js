@@ -10,7 +10,7 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
             case 'intern': $scope.availableCourses[2]; break;
             default: $scope.availableCourses[3];
         }
-    })
+    });
     $scope.availableCourses = [
             {id: '1', name: 'construction'},
             {id: '2', name: 'public'},
@@ -37,10 +37,23 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
                 console.log('error', err);
             });
     }
+    $scope.uploads = [
+        {
+            id: "1",
+            name: "file1",
+            avatar: "http://loremflickr.com/70/70",
+            created: "new Data",
+            size: "54",
+            check: "1"
+        },
+        {
+            id: "2",
+            name: "file2",
+            avatar: "http://loremflickr.com/70/70",
+            created: "new Data",
+            size: "45",
+            check: "2"
+        }
+    ]
 });
-app.factory('workspaceService', function() {
-    var types = [];
-    return {
-        types: ['outodor', 'science', 'relations', 'new Theme', 'Public Theme']
-    }
-})
+

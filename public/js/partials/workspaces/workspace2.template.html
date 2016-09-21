@@ -1,6 +1,6 @@
-<form ng-submit="$ctrl.go('/workspace/synopsis/' + $ctrl.courseData.types)" name="$ctrl.selectType">
+<form ng-submit="$ctrl.go('/workspace/upload')" name="$ctrl.selectType">
     <div class="types">
-        <div class="item-number active-item"><p>1</p></div>
+        <div class="item-number active-item check-item"><p>1</p></div>
         <div class="item-name"><p>Select type</p></div>
         <div class="item-wrap">
             <div class="checkbox">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="types">
-        <div class="item-number"><p>2</p></div>
+        <div class="item-number active-item check-item"><p>2</p></div>
         <div class="item-name"><p>Short Synopsis</p></div>
         <div class="item-wrap">
             <div class="labels"><p>Who?</p></div>
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="types">
-        <div class="item-number"><p>3</p></div>
+        <div class="item-number active-item check-item"><p>3</p></div>
         <div class="item-name"><p>The four D's</p></div>
         <div class="item-wrap">
             <div class="fases"><p>Fase 1</p></div>
@@ -52,6 +52,7 @@
         </div>
     </div>
     <div class="button-wrap">
-        <button type="submit" ng-click="$ctrl.createCourse()" class="btn btn-primary">Next</button>
+        <a href="/workspace/discover" ng-click="" class="btn btn-primary">Previous</a>
+        <button type="submit" ng-click="" class="btn btn-primary">Next</button>
     </div>
 </form>

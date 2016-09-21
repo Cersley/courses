@@ -5,7 +5,7 @@
     </section>
     <section class="create-user">
         <span>Create new user:</span>
-        <form name="AddUser" ng-submit="$ctrl.createUser()">
+        <form name="AddUser" ng-submit="$ctrl.createUser('/users')">
             <label for="new-name">Name *</label>
             <input type="text" id="new-name" class="input-new" ng-model="$ctrl.userData.name" required>
             <label for="new-email">Email *</label>
@@ -26,26 +26,5 @@
             <span class='show-matches'
                   ng-show="$ctrl.userData.password !== password2">Passwords don't match</span>
         </form>
-        <!--<p>-->
-            <!--<span>Username: <b>{{$ctrl.params.userName}}</b></span>-->
-            <!--&lt;!&ndash;<span>Username: <b>{{$ctrl.params.userName}}</b></span>&ndash;&gt;-->
-            <!--<span>Role: {{$ctrl.params.userRole}}</span>-->
-            <!--<span></span>-->
-        <!--</p>-->
     </section>
-    <!--<div class="settings">-->
-        <!--<span>Settings:</span>-->
-        <!--<form name="password" ng-submit="$ctrl.updateUserPassword($ctrl.params.userId, $ctrl.formInfo.val2)">-->
-            <!--<label for="new-password">Enter new password:</label>-->
-            <!--<input id="new-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val1" required>-->
-            <!--<label for="repeat-password">Repeat new password:</label>-->
-            <!--<input id="repeat-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val2" required>-->
-            <!--<input type="submit"-->
-                   <!--value="save"-->
-                   <!--ng-disabled="$ctrl.formInfo.val1 !== $ctrl.formInfo.val2"-->
-                   <!--class="btn btn-primary save-password-btn btn-sm">-->
-            <!--<span ng-show="$ctrl.formInfo.val1 !== $ctrl.formInfo.val2">Passwords don't match</span>-->
-        <!--</form>-->
-        <!--<span>{{$ctrl.params.userId}}</span>-->
-    <!--</div>-->
 </article>

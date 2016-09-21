@@ -13,7 +13,7 @@
                     <p><b>{{course.name}}</b><br>{{course.status}}</p>
                 </div>
             </a>
-            <span><p ng-click="removeCourse(course.id, item)">&times</p></span>
+            <span><p ng-click="removeCourse(course.id, $index)">&times</p></span>
             <select ng-model="selected"
                     ng-options="x as x.name for x in availableCourses"
                     ng-change="updatePlaceCourse(course.id, selected.name)">

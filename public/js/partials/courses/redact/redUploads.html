@@ -22,8 +22,19 @@
                                 </label>
                                 <div class="uploads-red-square">4</div>
                             </section>
-                            <section class="uploads-content" ng-repeat="upload in severalUploads.uploads">
-                                <upload></upload>
+                            <section class="uploads-content" ng-repeat="upload in uploads">
+                                <img ng-src={uploads.avatar}} alt="">
+                                <ul class="content-description">
+                                    <li>{{upload.name}}</li>
+                                    <li><span>Created: </span>{{upload.created}}</li>
+                                    <li><span>Size: </span>{{upload.size}}</li>
+                                </ul>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="{{upload.check}}">
+                                    <label for="{{upload.check}}"></label>
+                                </div>
+                                <!--<input type="checkbox">-->
+                                <span class="deleter"><p ng-click="uploads.splice($index, 1)">&times</p></span>
                             </section>
                         </article>
                         <div class="button-wrap">

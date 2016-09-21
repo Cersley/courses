@@ -27,34 +27,30 @@ app.config(function($routeProvider, $locationProvider) {
             template: '<work-space></work-space>',
             activetab: 'workspace'
         })
-        .when('/workspace/synopsis/:type', {
+        .when('/workspace1', {
+            template: '<work-space1></work-space1>',
+            activetab: 'workspace'
+        })
+        .when('/workspace/synopsis/:typeCourse', {
             template: '<synopsis></synopsis>',
             activetab: 'workspace'
         })
-        // .when('/workspace/synopsis', {
-        //     templateUrl: "js/partials/workspaces/synopsis.template.html",
-        //     activetab: 'workspace'
-        // })
-        // .when('/workspace/nextStage', {
-        //     templateUrl: "js/partials/workspaces/next-stage.html",
-        //     activetab: 'workspace'
-        // })
-        // .when('/workspace/discover', {
-        //     templateUrl: "js/partials/workspaces/discover.html",
-        //     activetab: 'workspace'
-        // })
-        // .when('/workspace/nextStagef', {
-        //     templateUrl: "js/partials/workspaces/next-stage-2.html",
-        //     activetab: 'workspace'
-        // })
-        // .when('/workspace/uploads', {
-        //     templateUrl: "js/partials/workspaces/uploads.html",
-        //     activetab: 'workspace'
-        // })
-        // .when('/workspace/addCourse', {
-        //     templateUrl: "js/partials/workspaces/add-course.html",
-        //     activetab: 'workspace'
-        // })
+        .when('/workspace/discover', {
+            template: '<discover></discover>',
+            activetab: 'workspace'
+        })
+        .when('/workspace2', {
+            template: '<work-space2></work-space2>',
+            activetab: 'workspace'
+        })
+        .when('/workspace/upload', {
+            template: '<upload></upload>',
+            activetab: 'workspace'
+        })
+        .when('/addCourse', {
+            template: '<add-course></add-course>',
+            activetab: 'workspace'
+        })
 
 
 

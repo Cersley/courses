@@ -21,8 +21,16 @@ module.exports = {
     getAllUsers: getAllUsers,
     removeUser: removeUser,
     updateUserPassword: updateUserPassword,
-    createUser: createUser
+    createUser: createUser,
+    createCourse: createCourse,
+    addSynopsisOfCourse: addSynopsisOfCourse,
+    selectLastId: selectLastId
 };
+
+
+// COURSES
+
+
 function getAllCourses(req, res) {
     db.any('select * from courses')
         .then(function (data) {
@@ -51,6 +59,63 @@ function updatePlaceCourse(req, res) {
             console.log(error);
         });
 }
+function selectLastId(req, res) {
+    db.one("SELECT id FROM courses ORDER BY id DESC LIMIT 1")
+        .then(function(data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function createCourse(req, res) {
+    db.one("insert into courses (avatar, name, status, place, types, title, subtitle, who, why, what, " +
+        "\"purpose goal\", \"learning content\", activites, \"learning course\", \"learning goals\")" +
+        "values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)",
+        [req.body.avatar,
+        req.body.name,
+        req.body.status,
+        req.body.place,
+        req.body.types,
+        req.body.title,
+        req.body.subtitle,
+        req.body.who,
+        req.body.why,
+        req.body.what,
+        req.body.purposeGoal,
+        req.body.learningContent,
+        req.body.activites,
+        req.body.learningCourse,
+        req.body.learningGoals]
+    )
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function addSynopsisOfCourse(req, res) {
+    db.none("update courses set title=$1 subtitle=$2 who=$3 why=$4 what=$5 where id=$6",
+        // [req.body.title,
+        // req.body.subtitle,
+        // req.body.who,
+        // req.body.why,
+        // req.body.what,
+        // req.params.courseId]
+        [1,1,1,1,1,1,373]
+    )
+        .then(function () {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+// USERS
+
 function getAllUsers(req, res) {
     db.any('select * from users')
         .then(function (data) {
@@ -79,11 +144,17 @@ function updateUserPassword(req, res) {
             console.log(error);
         });
 }
-//
-function createUser(req, res, next) {
+function createUser(req, res) {
     db.none("insert into users (name, role, password, stars, avatar, email, department)" +
         "values($1, $2, $3, $4, $5, $6, $7)",
-        [req.body.name, req.body.role, req.body.password, req.body.stars, req.body.avatar, req.body.email, req.body.department])
+        [req.body.name,
+        req.body.role,
+        req.body.password,
+        req.body.stars,
+        req.body.avatar,
+        req.body.email,
+        req.body.department]
+    )
         .then(function () {
             res.send(data);
         })
@@ -91,20 +162,4 @@ function createUser(req, res, next) {
             console.log(error);
         });
 }
-//
-// function updateCourse(req, res, next) {
-//     db.none('update courses set avatar=$1, name=$2, status=$3, place=$4 where id=$5',
-//         ['SOMEARTRIGHTHERE', 'owerqw', 'werqw',
-//             'uwert', 4])
-//             // res.status(200)
-//             //     .json({
-//             //         status: 'success',
-//             //         message: 'Updated puppy'
-//             //     });
-//         //    console.log(getAllCourses())
-//         // .catch(function (err) {
-//         //     return next(err);
-//         // });
-// }
-//
 

@@ -13,16 +13,16 @@
     </section>
     <div class="settings">
         <span>Settings:</span>
-        <form name="passwordUpdate" ng-submit="$ctrl.updateUserPassword($ctrl.params.userId, $ctrl.formInfo.val1)">
+        <form name="passwordUpdate" ng-submit="$ctrl.updateUserPassword($ctrl.params.userId, val1)">
             <label for="new-password">Enter new password:</label>
-            <input id="new-password" type="password" class="input-pass" ng-model="$ctrl.formInfo.val1" required>
+            <input id="new-password" type="password" class="input-pass" ng-model="val1" required>
             <label for="repeat-password">Repeat new password:</label>
             <input id="repeat-password" type="password" class="input-pass" ng-model="val2" required>
             <input type="submit"
                    value="save"
-                    ng-disabled="$ctrl.formInfo.val1 !== val2"
+                    ng-disabled="val1 !== val2"
                     class="btn btn-primary save-password-btn btn-sm">
-            <span ng-show="$ctrl.formInfo.val1 !== val2">Passwords don't match</span>
+            <span ng-show="val1 !== val2">Passwords don't match</span>
         </form>
     </div>
 </article>
