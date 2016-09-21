@@ -699,7 +699,7 @@ textarea:focus:-ms-input-placeholder {
 	padding: 15px;
 	width: 100%;
 	border-bottom: 1px solid #d9dfe5;
-	height: 100px;
+	height: 110px;
 }
 .uploads-content img {
 	display: inline-block;
@@ -714,6 +714,7 @@ textarea:focus:-ms-input-placeholder {
 	margin: 0;
 	display: inline-block;
 	padding-left: 15px;
+	width: 180px;
 }
 .content-description li:nth-child(1) {
 	color: #5ca4d1;
