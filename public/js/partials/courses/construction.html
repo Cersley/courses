@@ -5,8 +5,7 @@
         <a href="/courses/intern"><li>Intern items</li></a>
         <a href="/courses/deletion"><li>Deletion items</li></a>
     </ul>
-    <section ng-repeat="course in coursesData">
-    <!--<section ng-repeat="course in coursesData | filter : {place: 'construction'}">-->
+    <section ng-repeat="course in coursesData | filter : {place: 'construction'} : true">
         <div class="course-item">
             <a href="/redactCourse">
                 <div>
@@ -20,5 +19,6 @@
                     ng-change="updatePlaceCourse(course.id, selected.name)">
             </select>
         </div>
+        <div ng-class="{ow: $route.current.activedroptab === 'construction'}"></div>
     </section>
 </article>

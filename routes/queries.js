@@ -96,14 +96,14 @@ function createCourse(req, res) {
         });
 }
 function addSynopsisOfCourse(req, res) {
+    console.log(req.body.title);
     db.none("update courses set title=$1 subtitle=$2 who=$3 why=$4 what=$5 where id=$6",
-        // [req.body.title,
-        // req.body.subtitle,
-        // req.body.who,
-        // req.body.why,
-        // req.body.what,
-        // req.params.courseId]
-        [1,1,1,1,1,1,373]
+        [req.body.title,
+        req.body.subtitle,
+        req.body.who,
+        req.body.why,
+        req.body.what,
+        req.params.courseId]
     )
         .then(function () {
             res.send(data);

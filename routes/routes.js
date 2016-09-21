@@ -9,7 +9,6 @@ router.put('/courses/addSynopsis/:courseId', db.addSynopsisOfCourse);
 router.post('/courses/create', db.createCourse);
 router.delete('/courses/remove/:course_id', db.removeCourse);
 router.get('/courses/selectLastId', db.selectLastId);
-db.addSynopsisOfCourse()
 
 router.get('/users/list', db.getAllUsers);
 router.delete('/users/remove/:user_id', db.removeUser);

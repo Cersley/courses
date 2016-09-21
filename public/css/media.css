@@ -227,7 +227,7 @@
     .toggle-menu {
         position: absolute;
         top: -60px;
-        right: 10px;15px;
+        right: 10px;
         padding: 2px 7px;
         color: #90969b;
         background-color: #fff;
@@ -376,6 +376,7 @@
     }
     .upload-users, .upload-user {
         padding: 0 10px;
+        width: 100px;
     }
     .uploads-red-square {
         margin: 10px 5px 10px 0;
@@ -501,6 +502,9 @@
     .redact  .upload-user {
         padding: 0 8px;
         width: 105px;
+    }
+    .upload-users, .upload-user {
+        width: 100px;
     }
     .courses {
         height: 515px;

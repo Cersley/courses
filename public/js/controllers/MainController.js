@@ -4,13 +4,14 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
     $scope.$routeParams = $routeParams;
     $scope.$on('$routeChangeSuccess', function(event, current) {
         $scope.addCourse = current.activetab === 'workspace' ? 'Setup Course' : '+ Add Course';
-        switch($scope.selected = current.activedroptab) {
-            case 'costruction': $scope.availableCourses[0]; break;
-            case 'public': $scope.availableCourses[1]; break;
-            case 'intern': $scope.availableCourses[2]; break;
-            default: $scope.availableCourses[3];
-        }
+        $scope.selected = (current.activedroptab === 'construction') ? $scope.availableCourses[0] :
+                          (current.activedroptab === 'public') ? $scope.availableCourses[1] :
+                          (current.activedroptab === 'intern') ? $scope.availableCourses[2] :
+                          $scope.availableCourses[3]
     });
+    $scope.triggerMenu = function() {
+        $scope.actionTriggered = !$scope.actionTriggered;
+    }
     $scope.availableCourses = [
             {id: '1', name: 'construction'},
             {id: '2', name: 'public'},

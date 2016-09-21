@@ -294,9 +294,32 @@ main .wrapper {
 	-moz-appearance: none;
 	appearance: none;
 	border: transparent;
+	padding: 3px 15px;
+	text-align: center;
+	background-color: transparent;
+	z-index: 2;
 }
-.courses section select > option {
-	padding: 10px 20px;
+.courses section .ow, .courses section .gw, .courses section .rw, .courses section .bw {
+	position: absolute;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	right: 4px;
+	bottom: 4px;
+	z-index: 0;
+	background-color: #ffa500;
+}
+.courses section .ow {
+	background-color: #ffa500;
+}
+.courses section .gw {
+	background-color: #008000;
+}
+.courses section .rw {
+	background-color: #ff0000;
+}
+.courses section .bw {
+	background-color: #0000ff;
 }
 
 

@@ -19,6 +19,6 @@
                     ng-change="updatePlaceCourse(course.id, selected.name)">
             </select>
         </div>
-
+        <div ng-class="{bw: $route.current.activedroptab === 'deletion'}"></div>
     </section>
 </article>
