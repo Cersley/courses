@@ -1,9 +1,11 @@
-<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}">
+<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}" ng-controller="RedactCoursesController">
     <div class="container">
         <div class="row">
             <div class="col-md-12 no-padding">
                 <div class="redact-head">
-                    <div class="redact-icons icon-comment"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+                    <div class="redact-icons icon-comment">
+                        <i class="fa fa-comment-o" aria-hidden="true" id="topRed"></i>
+                    </div>
                     <div class="right-icons">
                         <div class="redact-icons icon-user"><i class="fa fa-user" aria-hidden="true"></i></div>
                         <div class="redact-icons"><i class="fa fa-wrench" aria-hidden="true"></i></div>
@@ -16,32 +18,39 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="write-outline">
-                                    <form action="/redactCourse1">
+                                    <form ng-submit="go('/redactCourse/' + paramId)">
                                         <div class="col-md-3 col-sm-3 col-xs-6 outline-params">
                                             <div><span>2.Write Outline</span></div>
                                         </div>
                                         <div class="col-md-5 col-sm-5 col-xs-12">
-
-                                            <input type="text" placeholder="Edit title" required>
-                                            <input type="text" placeholder="Edit subtitle" required>
-
+                                            <input type="text" placeholder="Edit title" ng-model="title" required>
+                                            <input type="text" placeholder="Edit subtitle" ng-model="subtitle" required>
                                         </div>
                                         <div class="col-md-4 col-sm-4 name-items">
-                                            <span>{{name items}}</span>
+                                            <span>#{{courseData[0].types}}</span>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="descriptions" placeholder="WHO?" required></textarea>
+                                            <textarea class="descriptions" placeholder="WHO?" ng-model="who" required>
+
+                                            </textarea>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="descriptions" placeholder="WHY?" required></textarea>
+                                            <textarea class="descriptions" placeholder="WHY?" ng-model="why" required>
+
+                                            </textarea>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="descriptions" placeholder="WHAT?" required></textarea>
+                                            <textarea class="descriptions" placeholder="WHAT?" ng-model="what" required>
+
+                                            </textarea>
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="button-wrap">
-                                                <button type="submit" value="Save" class="btn btn-primary">Save</button>
-                                                <a href="/redactCourse" class="btn btn-primary">Cancel</a>
+                                                <button type="submit"
+                                                        class="btn btn-primary"
+                                                        ng-click="addSynopsisOfCourse(title, subtitle, who, why, what,
+                                                        courseData[0].id)">Save</button>
+                                                <a href="/redactCourse/{{paramId}}" class="btn btn-primary">Cancel</a>
                                             </div>
                                         </div>
                                     </form>

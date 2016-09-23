@@ -7,10 +7,10 @@
     </ul>
     <section ng-repeat="course in coursesData | filter : {place: 'deletion'} : true">
         <div class="course-item">
-            <a href="/redactCourse">
+            <a href="/redactCourse/{{course.id}}">
                 <div>
-                    <img ng-src="img/{{course.avatar}}">
-                    <p><b>{{course.name}}</b><br>{{course.status}}</p>
+                    <img ng-src="img/{{course.avatar || 'noimg.jpg'}}">
+                    <p><b>{{course.title}}</b><br>{{course.subtitle}}</p>
                 </div>
             </a>
             <span><p ng-click="removeCourse(course.id, $index)">&times</p></span>

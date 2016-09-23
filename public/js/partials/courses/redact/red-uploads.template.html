@@ -1,9 +1,11 @@
-<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}">
+<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}" ng-controller="RedactCoursesController">
     <div class="container">
         <div class="row">
             <div class="col-md-12 no-padding">
                 <div class="redact-head">
-                    <div class="redact-icons icon-comment"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+                    <div class="redact-icons icon-comment">
+                        <i class="fa fa-comment-o" aria-hidden="true" id="topRed"></i>
+                    </div>
                     <div class="right-icons">
                         <div class="redact-icons icon-user"><i class="fa fa-user" aria-hidden="true"></i></div>
                         <div class="redact-icons"><i class="fa fa-wrench" aria-hidden="true"></i></div>
@@ -12,33 +14,34 @@
             </div>
             <div class="col-md-12 no-padding">
                 <div class="redact-form">
-                    <form action="/redactCourse3">
-                        <article class="upload-wrapper">
+                    <form ng-submit="go('/redactCourse/' + paramId)" name="uploadForm">
+                        <article class="upload-wrapper" id="setup">
                             <section class="upload-header">
                                 <span class="upload-user act-us">My resourses</span>
                                 <label class="btn btn-primary uploads-button">
                                     <span>Upload resourse</span>
-                                    <input type="file">
+                                    <input type="file" name="files" fileread="file">
                                 </label>
                                 <div class="uploads-red-square">4</div>
                             </section>
-                            <section class="uploads-content" ng-repeat="upload in uploads">
-                                <img ng-src={uploads.avatar}} alt="">
+                            <section class="uploads-content" ng-repeat="up in images">
+                                <img ng-src={upload}} alt="">
                                 <ul class="content-description">
-                                    <li>{{upload.name}}</li>
-                                    <li><span>Created: </span>{{upload.created}}</li>
-                                    <li><span>Size: </span>{{upload.size}}</li>
+                                    <li>name: {{up.update}}</li>
+                                    <li><span>Created: </span>{{up.created}}</li>
+                                    <li><span>Size: </span>{{up.size}}</li>
                                 </ul>
                                 <div class="checkbox">
-                                    <input type="checkbox" id="{{upload.check}}">
-                                    <label for="{{upload.check}}"></label>
+                                    <input type="checkbox" id="{{up.id}}">
+                                    <label for="{{up.id}}"></label>
                                 </div>
-                                <span class="deleter"><p ng-click="uploads.splice($index, 1)">&times</p></span>
+                                <span class="deleter"><p ng-click="images.splice($index, 1)">&times</p></span>
                             </section>
                         </article>
                         <div class="button-wrap">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="/redactCourse2"type="button" class="btn btn-primary">Cancel</a>
+                            <button type="submit"
+                                    ng-click="addImg(file, courseData[0].id)" class="btn btn-primary">Save</button>
+                            <a href="/redactCourse/{{paramId}}" class="btn btn-primary">Cancel</a>
                         </div>
                     </form>
                 </div>

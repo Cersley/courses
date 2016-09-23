@@ -2,7 +2,7 @@
     <div class="write-outline">
         <div class="container-fluid">
             <div class="row">
-                <form ng-submit="$ctrl.go('/workspace1')" name="$ctrl.Synopsis">
+                <form ng-submit="$ctrl.go('/workspace')" name="$ctrl.synopsis" id="setup">
                     <div class="col-md-3 col-sm-3 col-xs-6 outline-params">
                         <div><span>2.Write Outline</span></div>
                     </div>
@@ -13,28 +13,29 @@
 
                     </div>
                     <div class="col-md-4 col-sm-4 name-items">
-                        <span>{{'#' + $ctrl.param.typeCourse}}</span>
+                        <span>{{'#' + $ctrl.courseParam[0].types}}</span>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHO?" ng-model="who" required></textarea>
+                        <textarea class="descriptions" placeholder="WHO?" ng-model="who" required>
+
+                        </textarea>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHY?" ng-model="why" required></textarea>
+                        <textarea class="descriptions" placeholder="WHY?" ng-model="why" required>
+
+                        </textarea>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHAT?" ng-model="what" required></textarea>
+                        <textarea class="descriptions" placeholder="WHAT?" ng-model="what" required>
+
+                        </textarea>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="button-wrap">
                             <button type="submit"
                                     class="btn btn-primary"
-                                    ng-click="$ctrl.addSynopsisOfCourse(
-                                     title,
-                                      subtitle,
-                                      who,
-                                      why,
-                                      what)">
-                            Save</button>
+                                    ng-click="$ctrl.addSynopsisOfCourse(title, subtitle, who, why, what,
+                                    $ctrl.courseParam[0].id)">Save</button>
                             <a href="/workspace" ng-click="" class="btn btn-primary">Cancel</a>
                         </div>
                     </div>

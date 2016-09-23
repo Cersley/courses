@@ -8,7 +8,15 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
                           (current.activedroptab === 'public') ? $scope.availableCourses[1] :
                           (current.activedroptab === 'intern') ? $scope.availableCourses[2] :
                           $scope.availableCourses[3]
+        //DATA FETCH
+        $http.get('/courses/course')
+            .then(function successCallback(courseInfo) {
+                $scope.coursesData = courseInfo.data;
+            }, function errorCallback(err) {
+                console.log('error', err);
+            });
     });
+
     $scope.triggerMenu = function() {
         $scope.actionTriggered = !$scope.actionTriggered;
     }
@@ -19,12 +27,15 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
             {id: '4', name: 'deletion'}
     ];
     $scope.coursesData = [];
-    $http.get('/courses/course')
-        .then(function successCallback(courseInfo) {
-            $scope.coursesData = courseInfo.data;
-        }, function errorCallback(err) {
-            console.log('error', err);
-    });
+    $scope.courseData = []
+    $scope.createCourse = function () {
+        $http.post('/courses/create', self.courseData)
+            .then(function successCallback() {
+                self.courseData = {};
+            }, function errorCallback(err) {
+                console.log('error', err);
+            });
+    }
     $scope.removeCourse = function(courseId, $index) {
         $scope.coursesData.splice($index, 1);
         $http.delete('/courses/remove/' + courseId);

@@ -27,11 +27,7 @@ app.config(function($routeProvider, $locationProvider) {
             template: '<work-space></work-space>',
             activetab: 'workspace'
         })
-        .when('/workspace1', {
-            template: '<work-space1></work-space1>',
-            activetab: 'workspace'
-        })
-        .when('/workspace/synopsis/:typeCourse', {
+        .when('/workspace/synopsis', {
             template: '<synopsis></synopsis>',
             activetab: 'workspace'
         })
@@ -39,47 +35,26 @@ app.config(function($routeProvider, $locationProvider) {
             template: '<discover></discover>',
             activetab: 'workspace'
         })
-        .when('/workspace2', {
-            template: '<work-space2></work-space2>',
-            activetab: 'workspace'
-        })
         .when('/workspace/upload', {
             template: '<upload></upload>',
             activetab: 'workspace'
         })
-        .when('/addCourse', {
-            template: '<add-course></add-course>',
-            activetab: 'workspace'
-        })
 
 
-
-        .when('/redactCourse', {
-            templateUrl: "js/partials/courses/redact/redactCourse.html",
+        .when('/redactCourse/:courseId', {
+            templateUrl: 'js/partials/courses/redact/redact-course.template.html',
             activetab: 'redact'
         })
-        .when('/redSynopsis', {
-            templateUrl: "js/partials/courses/redact/redSynopsis.html",
+        .when('/redSynopsis/:courseId', {
+            templateUrl: "js/partials/courses/redact/red-synopsis.template.html",
             activetab: 'redact'
         })
-        .when('/redDiscover', {
-            templateUrl: "js/partials/courses/redact/redDiscover.html",
+        .when('/redDiscover/:courseId', {
+            templateUrl: "js/partials/courses/redact/red-discover.template.html",
             activetab: 'redact'
         })
-        .when('/redUploads', {
-            templateUrl: "js/partials/courses/redact/redUploads.html",
-            activetab: 'redact'
-        })
-        .when('/redactCourse1', {
-            templateUrl: "js/partials/courses/redact/redactCourse1.html",
-            activetab: 'redact'
-        })
-        .when('/redactCourse2', {
-            templateUrl: "js/partials/courses/redact/redactCourse2.html",
-            activetab: 'redact'
-        })
-        .when('/redactCourse3', {
-            templateUrl: "js/partials/courses/redact/redactCourse3.html",
+        .when('/redUploads/:courseId', {
+            templateUrl: "js/partials/courses/redact/red-uploads.template.html",
             activetab: 'redact'
         })
 

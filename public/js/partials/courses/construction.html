@@ -5,12 +5,13 @@
         <a href="/courses/intern"><li>Intern items</li></a>
         <a href="/courses/deletion"><li>Deletion items</li></a>
     </ul>
-    <section ng-repeat="course in coursesData | filter : {place: 'construction'} : true">
+    <section ng-repeat="course in coursesData">
+    <!--<section ng-repeat="course in coursesData | filter : {place: 'construction'} : true">-->
         <div class="course-item">
-            <a href="/redactCourse">
+            <a href="/redactCourse/{{course.id}}">
                 <div>
-                    <img ng-src="img/{{course.avatar}}">
-                    <p><b>{{course.name}}</b><br>{{course.status}}</p>
+                    <img ng-src="img/{{course.avatar || 'noimg.jpg'}}">
+                    <p><b>{{course.title}}</b><br>{{course.subtitle}}</p>
                 </div>
             </a>
             <span><p ng-click="removeCourse(course.id, $index)">&times</p></span>

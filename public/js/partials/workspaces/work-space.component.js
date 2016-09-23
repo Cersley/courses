@@ -2,113 +2,135 @@ angular
     .module('workSpace')
     .component('workSpace', {
         templateUrl: 'js/partials/workspaces/workspace.template.html',
-        controller: function WorkspaceController($location, $http) {
+        controller: function WorkspaceController($location, $http, $anchorScroll, $timeout) {
             var self = this;
             self.go = function (hash) {
                 if (self.selectType.$valid) {
-                    if (1 === 1) {
+                    $timeout(function () {
                         $location.path(hash);
-                    }
+                        $location.hash("setup");
+                        $anchorScroll();
+                    }, 500);
                 }
             }
-            self.createCourse = function () {
-                $http.post('/courses/create', self.courseData)
-                    .then(function successCallback() {
-                        self.courseData = {};
-                    }, function errorCallback(err) {
-                        console.log('error', err);
-                    });
-            }
-            $http.get('/courses/course')
-                .then(function successCallback(courseInfo) {
-                    self.coursesData = courseInfo.data;
+            self.courseParam = [];
+            $http.get('/courses/courseParam')
+                .then(function successCallback(course) {
+                    self.courseParam = course.data;
                 }, function errorCallback(err) {
                     console.log('error', err);
                 });
+            self.addTypes = function(typeOfCourse, courseId) {
+                $http.put('/courses/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
+            }
+            self.createArea = function(courseId, kindOfItem) {
+                $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId})
             }
         }
-    )
+    })
     .component('synopsis', {
         templateUrl: 'js/partials/workspaces/synopsis.template.html',
-        controller: function Synopsis($location, $route, $http, $q) {
+        controller: function Synopsis($http, $location, $anchorScroll, $timeout) {
             var self = this;
-            self.param = $route.current.params;
             self.go = function (hash) {
-                if (self.Synopsis.$valid) {
-                        return $location.path(hash);
-                }
+                    $timeout(function () {
+                        $location.path(hash);
+                        $location.hash("setup");
+                        $anchorScroll();
+                    }, 500);
             }
-            self.selectLastId = function () {
-                var deferred = $q.defer();
-                $http.get('/courses/selectLastId')
-                    .then(function successCallback(resp) {
-                        deferred.resolve(resp.data.id)
-                    }, function errorCallback(status) {
-                        deferred.reject(status);
-                    });
-                return deferred.promise;
-            }
+            $http.get('/courses/courseParam')
+                .then(function successCallback(course) {
+                    self.courseParam = course.data;
+                }, function errorCallback(err) {
+                    console.log('error', err);
+                });
             self.addSynopsisOfCourse = function(titleOfCourse, subtitleOfCourse,
-                                                whoOfCourse, whyOfCourse, whatOfCourse) {
-                if (self.Synopsis.$valid) {
-                    self.selectLastId().then(
-                        function successCallback(res) {
-                            $http.put('/courses/addSynopsis/' + res,
-                                {title: titleOfCourse,
-                                subtitle: subtitleOfCourse,
-                                who: whoOfCourse,
-                                why: whyOfCourse,
-                                what: whatOfCourse,
-                                courseId: res}
-                            )
-                        }, function errorCallback(status) {
-                            deferred.reject(status);
-                        });
-                }
-
+                                                whoOfCourse, whyOfCourse, whatOfCourse, courseId) {
+                $http.put('/courses/addSynopsis/' + courseId,
+                    {
+                        title: titleOfCourse,
+                        subtitle: subtitleOfCourse,
+                        who: whoOfCourse,
+                        why: whyOfCourse,
+                        what: whatOfCourse,
+                        courseId: courseId
+                    }
+                )
             }
+
         }
     })
-    .component('workSpace1', {
-            templateUrl: 'js/partials/workspaces/workspace1.template.html',
-            controller: function WorkspaceController($location, $http) {
-                var self = this;
-                self.go = function (hash) {
-                    // if (self.Synopsis.$valid) {
-                        return $location.path(hash);
-                    // }
-                }
-            }
-        }
-    )
     .component('discover', {
         templateUrl: 'js/partials/workspaces/discover.template.html',
-        controller: function Synopsis($location) {
+        controller: function Synopsis($location, $http, $anchorScroll, $timeout) {
             var self = this;
-            self.go = function(hash){
-                $location.path(hash);
+            self.go = function (hash) {
+                    $timeout(function () {
+                        $location.path(hash);
+                        $location.hash("setup");
+                        $anchorScroll();
+                    }, 500);
+            }
+            $http.get('/courses/courseParam')
+                .then(function successCallback(course) {
+                    self.courseParam = course.data;
+                }, function errorCallback(err) {
+                    console.log('error', err);
+                });
+            self.addDiscoverOfCourse = function(purposeGoal, learningContent, activites, learningCourse,
+                                                learningGoals, courseId) {
+                $http.put('/courses/addDiscover/' + courseId,
+                    {
+                        purposeGoal: purposeGoal,
+                        learningContent: learningContent,
+                        activites: activites,
+                        learningCourse: learningCourse,
+                        learningGoals: learningGoals,
+                        courseId: courseId
+                    }
+                )
             }
         }
     })
-    .component('workSpace2', {
-            templateUrl: 'js/partials/workspaces/workspace2.template.html',
-            controller: function WorkspaceController($location, $http) {
-                var self = this;
-                self.go = function (hash) {
-                    // if (self.Synopsis.$valid) {
-                    return $location.path(hash);
-                    // }
-                }
-            }
-        }
-    )
     .component('upload', {
             templateUrl: 'js/partials/workspaces/upload.template.html',
-            controller: function WorkspaceController($location, $http) {
+            controller: function WorkspaceController($location, $anchorScroll, $scope, $http, $timeout) {
                 var self = this;
-                self.go = function(hash){
-                    $location.path(hash);
+                self.go = function (hash) {
+                    $timeout(function () {
+                        $location.path(hash);
+                        $location.hash("setup");
+                        $anchorScroll();
+                    }, 500);
                 }
+                self.courseParam = [];
+                $http.get('/courses/courseParam')
+                    .then(function successCallback(course) {
+                        self.courseParam = course.data;
+                    }, function errorCallback(err) {
+                        console.log('error', err);
+                    });
+                self.images = [];
+                $http.get('/courses/images')
+                    .then(function successCallback(img) {
+                        self.images = img.data;
+                    }, function errorCallback(err) {
+                        console.log('error', err);
+                    });
+                self.addImg = function(img, courseId) {
+                    $http.put('/courses/addImg/' + courseId, {upload: img, courseId: courseId})
+                }
+                $scope.uploadFile = function(event) {
+                    $scope.files = event.target.files;
+                    var reader = new FileReader();
+                    reader.onloadend = function(res) {
+                        $scope.$apply(function () {
+                            $scope.img = res.currentTarget.result;
+                        });
+                    }
+                    reader.readAsDataURL(file);
+                };
                 self.uploads = [
                     {
                         id: "1",
@@ -130,16 +152,22 @@ angular
             }
         }
     )
-    .component('addCourse', {
-            templateUrl: 'js/partials/workspaces/addCourse.template.html',
-            controller: function WorkspaceController($location, $http) {
-                var self = this;
-                self.go = function (hash) {
-                    // if (self.Synopsis.$valid) {
-                    return $location.path(hash);
-                    // }
-                }
+    .directive("fileread", [function () {
+        return {
+            scope: {
+                fileread: "="
+            },
+            link: function (scope, element) {
+                element.bind("change", function (changeEvent) {
+                    var reader = new FileReader();
+                    reader.onloadend = function (loadEvent) {
+                        scope.$apply(function () {
+                            scope.fileread = loadEvent.target.result;
+                        });
+                    }
+                    reader.readAsDataURL(changeEvent.currentTarget.files[0]);
+                });
             }
         }
-    )
+    }]);
 

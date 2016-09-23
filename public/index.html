@@ -27,12 +27,12 @@
                         <div class="col-md-11 col-sm-11 col-xs-12">
                             <ul>
                                 <a href="/courses/construction"
+                                   id="setup"
                                    ng-class="{active: $route.current.activetab === 'courses'}">
                                     <li>My Panel</li>
                                 </a>
                                 <a href="/workspace"
-                                   ng-click="changeNameOfAddCourse()"
-                                   id="ad"
+                                   ng-click="createCourse()"
                                    ng-class="{active: $route.current.activetab === 'workspace'}">
                                     <li>{{addCourse}}</li>
                                 </a>
@@ -131,6 +131,7 @@
     <script src="../../libs/jquery/jquery-3.1.0.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/controllers/MainController.js"></script>
+    <script src="../../js/controllers/RedactCoursesController.js"></script>
     <script src="../../js/partials/users/user-list/user-list.module.js"></script>
     <script src="../../js/partials/users/user-list/user-list.component.js"></script>
     <script src="../../js/partials/users/user-info/user-info.module.js"></script>

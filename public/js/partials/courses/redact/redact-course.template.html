@@ -1,9 +1,11 @@
-<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}">
+<div class="redact" ng-class="{now: $route.current.activetab === 'redact'}" ng-controller="RedactCoursesController">
     <div class="container">
         <div class="row">
             <div class="col-md-12 no-padding">
                 <div class="redact-head">
-                    <div class="redact-icons icon-comment"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+                    <div class="redact-icons icon-comment">
+                        <i class="fa fa-comment-o" aria-hidden="true" id="topRed"></i>
+                    </div>
                     <div class="right-icons">
                         <div class="redact-icons icon-user"><i class="fa fa-user" aria-hidden="true"></i></div>
                         <div class="redact-icons"><i class="fa fa-wrench" aria-hidden="true"></i></div>
@@ -17,29 +19,34 @@
                         <div class="item-name"><p>Select type</p></div>
                         <div class="item-wrap">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkOutodor">
+                                <input type="radio" id="checkOutodor" ng-value="'Outodor'" name="type" ng-model="types"
+                                       ng-checked="courseData[0].types === 'Outodor'">
                                 <label for="checkOutodor">outodor</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" id="checkScience">
+                                <input type="radio" id="checkScience" ng-value="'Science'" name="type" ng-model="types"
+                                       ng-checked="courseData[0].types === 'Science'">
                                 <label for="checkScience">science</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" id="checkRelations">
+                                <input type="radio" id="checkRelations" ng-value="'Relations'" name="type" ng-model="types"
+                                       ng-checked="courseData[0].types === 'Relations'">
                                 <label for="checkRelations">relations</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" id="checkTheme">
+                                <input type="radio" id="checkTheme" ng-value="'New Theme'" name="type" ng-model="types"
+                                       ng-checked="courseData[0].types === 'New Theme'">
                                 <label for="checkTheme">new theme</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" id="checkPublic">
+                                <input type="radio" id="checkPublic" ng-value="'Public Theme'" name="type" ng-model="types"
+                                       ng-checked="courseData[0].types === 'Public Theme'">
                                 <label for="checkPublic">Public Theme</label>
                             </div>
                         </div>
                     </div>
                     <div class="types">
-                        <a href="/redSynopsis"><div class="item-number check-item"><p>2</p></div></a>
+                        <a href="/redSynopsis/{{paramId}}"><div class="item-number check-item"><p>2</p></div></a>
                         <div class="item-name"><p>Short Synopsis</p></div>
                         <div class="item-wrap">
                             <div class="labels"><p>Who?</p></div>
@@ -48,7 +55,7 @@
                         </div>
                     </div>
                     <div class="types">
-                        <a href="/redDiscover"><div class="item-number check-item active-item"><p>3</p></div></a>
+                        <a href="/redDiscover/{{paramId}}"><div class="item-number check-item"><p>3</p></div></a>
                         <div class="item-name"><p>The four D's</p></div>
                         <div class="item-wrap">
                             <div class="fases"><p>Fase 1</p></div>
@@ -58,7 +65,7 @@
                         </div>
                     </div>
                     <div class="types">
-                        <a href="/redUploads"><div class="item-number check-item"><p>4</p></div></a>
+                        <a href="/redUploads/{{paramId}}"><div class="item-number check-item"><p>4</p></div></a>
                         <div class="item-name"><p>Insert recordings</p></div>
                         <div class="item-wrap">
                             <div class="resourses"><p>Resourses</p></div>

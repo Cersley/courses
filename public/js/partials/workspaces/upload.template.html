@@ -1,29 +1,30 @@
-<form ng-submit="$ctrl.go('/addCourse')">
-<article class="upload-wrapper">
+<form ng-submit="$ctrl.go('/workspace')" name="$ctrl.uploadForm">
+<article class="upload-wrapper" id="setup">
     <section class="upload-header">
         <span class="upload-user act-us">My resourses</span>
         <label class="btn btn-primary uploads-button">
             <span>Upload resourse</span>
-            <input type="file">
+            <input type="file" name="files" fileread="file">
         </label>
         <div class="uploads-red-square">4</div>
     </section>
-    <section class="uploads-content" ng-repeat="upload in $ctrl.uploads">
-        <img ng-src={uploads.avatar}} alt="">
+    <section class="uploads-content" ng-repeat="up in $ctrl.images">
+        <img ng-src={upload}} alt="">
         <ul class="content-description">
-            <li>{{upload.name}}</li>
-            <li><span>Created: </span>{{upload.created}}</li>
-            <li><span>Size: </span>{{upload.size}}</li>
+            <li>name: {{up}}</li>
+            <li><span>Created: </span>{{up.created}}</li>
+            <li><span>Size: </span>{{up.size}}</li>
         </ul>
         <div class="checkbox">
-            <input type="checkbox" id="{{upload.check}}">
-            <label for="{{upload.check}}"></label>
+            <input type="checkbox" id="{{up.id}}">
+            <label for="{{up.id}}"></label>
         </div>
-        <span class="deleter"><p ng-click="$ctrl.uploads.splice($index, 1)">&times</p></span>
+        <span clas="deleter"><p ng-click="$ctrl.images.splice($index, 1)">&times</p></span>
+
     </section>
 </article>
 <div class="button-wrap">
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a href="/workspace2"type="button" class="btn btn-primary">Cancel</a>
+    <button type="submit" ng-click="$ctrl.addImg(file, $ctrl.courseParam[0].id)" class="btn btn-primary">Save</button>
+    <a href="/workspace"type="button" class="btn btn-primary">Cancel</a>
 </div>
 </form>

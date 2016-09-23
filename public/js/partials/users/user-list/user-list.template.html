@@ -5,7 +5,7 @@
     </section>
     <section class="uplads-list" ng-repeat="user in $ctrl.usersData">
         <section class="uploads-users">
-            <img ng-src="img/{{user.avatar}}" alt="">
+            <img ng-src="img/{{user.avatar || 'usernoimg.png'}}" alt="">
             <ul class="content-description">
                 <li><a href="/users/{{user.id}}/{{user.name}}/{{user.role}}" ng-click="$ctrl.goToUser()">{{user.name}}</a></li>
                 <li>Email: {{user.email}}</li>

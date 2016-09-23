@@ -24,7 +24,12 @@ module.exports = {
     createUser: createUser,
     createCourse: createCourse,
     addSynopsisOfCourse: addSynopsisOfCourse,
-    selectLastId: selectLastId
+    getCourseParam: getCourseParam,
+    addTypesOfCourse: addTypesOfCourse,
+    addDiscoverOfCourse: addDiscoverOfCourse,
+    addImg: addImg,
+    getImg: getImg,
+    getSelectedCourse: getSelectedCourse
 };
 
 
@@ -40,10 +45,20 @@ function getAllCourses(req, res) {
             console.log(error);
         });
 }
+function getSelectedCourse(req, res) {
+    console.log("REQUEST DATA: ", req);
+    db.any('select * from courses where id = $1', req.params.courseId)
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 function removeCourse(req, res) {
     var courseId = req.params.course_id;
     db.result('delete from courses where id = $1', courseId)
-        .then(function () {
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
@@ -52,24 +67,16 @@ function removeCourse(req, res) {
 }
 function updatePlaceCourse(req, res) {
     db.none("update courses set place=$1 where id=$2", [req.body.place, req.params.courseId])
-        .then(function () {
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
             console.log(error);
         });
 }
-function selectLastId(req, res) {
-    db.one("SELECT id FROM courses ORDER BY id DESC LIMIT 1")
-        .then(function(data) {
-            res.send(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+
 function createCourse(req, res) {
-    db.one("insert into courses (avatar, name, status, place, types, title, subtitle, who, why, what, " +
+    db.none("insert into courses (avatar, name, status, place, types, title, subtitle, who, why, what," +
         "\"purpose goal\", \"learning content\", activites, \"learning course\", \"learning goals\")" +
         "values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)",
         [req.body.avatar,
@@ -95,9 +102,27 @@ function createCourse(req, res) {
             console.log(error);
         });
 }
+function getCourseParam(req, res) {
+    db.any("SELECT * from courses ORDER BY id DESC LIMIT 1")
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function addTypesOfCourse(req, res) {
+    console.log(req.body);
+    db.none("update courses set types=$1 where id=$2", [req.body.types, req.params.courseId])
+        .then(function () {
+            res.send();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 function addSynopsisOfCourse(req, res) {
-    console.log(req.body.title);
-    db.none("update courses set title=$1 subtitle=$2 who=$3 why=$4 what=$5 where id=$6",
+    db.none("update courses set title=$1, subtitle=$2, who=$3, why=$4, what=$5 where id=$6",
         [req.body.title,
         req.body.subtitle,
         req.body.who,
@@ -105,7 +130,42 @@ function addSynopsisOfCourse(req, res) {
         req.body.what,
         req.params.courseId]
     )
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function addDiscoverOfCourse(req, res) {
+    console.log(req.body)
+    db.none("update courses set \"purpose goal\"=$1, \"learning content\"=$2, \"activites\"=$3, \"learning course\"=$4, \"learning goals\"=$5 where id=$6",
+        [req.body.purposeGoal,
+            req.body.learningContent,
+            req.body.activites,
+            req.body.learningCourse,
+            req.body.learningGoals,
+            req.params.courseId]
+    )
         .then(function () {
+            res.send();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function addImg(req, res) {
+    db.none("update courses set upload=$1 where id=$2", [req.body.upload, req.params.courseId])
+        .then(function () {
+            res.send();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function getImg(req, res) {
+    db.any("SELECT id, upload from courses")
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
@@ -128,7 +188,7 @@ function getAllUsers(req, res) {
 function removeUser(req, res) {
     var userId = req.params.user_id;
     db.result('delete from users where id = $1', userId)
-        .then(function () {
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
@@ -137,7 +197,7 @@ function removeUser(req, res) {
 }
 function updateUserPassword(req, res) {
     db.none("update users set password=$1 where id=$2", [req.body.password, req.params.user_id])
-        .then(function () {
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
@@ -155,7 +215,7 @@ function createUser(req, res) {
         req.body.email,
         req.body.department]
     )
-        .then(function () {
+        .then(function (data) {
             res.send(data);
         })
         .catch(function (error) {
