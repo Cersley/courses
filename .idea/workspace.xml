@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dca9827-4ed5-4543-ab3c-15a9063de477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.module.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/workspace1.template.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/workspace2.template.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/workspace3.template.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redDiscover.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-discover.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redSynopsis.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-synopsis.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redUploads.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse3.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common.js" afterPath="$PROJECT_DIR$/public/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/MainController.js" afterPath="$PROJECT_DIR$/public/js/controllers/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/construction.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/construction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/deletion.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/deletion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/intern.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/intern.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/public.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/public.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" afterPath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/synopsis.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/synopsis.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/workspace.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/workspace.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/queries.js" afterPath="$PROJECT_DIR$/routes/queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/routes.js" afterPath="$PROJECT_DIR$/routes/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/media.css" afterPath="$PROJECT_DIR$/public/css/media.css" />
     </list>
     <ignored path="traineeship.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,68 +31,7 @@
     <favorites_list name="traineeship" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RedactCoursesController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-335">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="red-uploads.template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.template.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1705">
-              <caret line="749" column="19" selection-start-line="749" selection-start-column="19" selection-end-line="749" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="queries.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/queries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,7 +80,6 @@
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/redSynopsis.html" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/redUploads.html" />
-        <option value="$PROJECT_DIR$/public/css/media.css" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/deletion.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/intern.html" />
@@ -195,6 +106,7 @@
         <option value="$PROJECT_DIR$/routes/queries.js" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" />
+        <option value="$PROJECT_DIR$/public/css/media.css" />
       </list>
     </option>
   </component>
@@ -208,7 +120,6 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1366" />
     <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="711" />
@@ -1625,12 +1536,12 @@
       <workItem from="1474564463597" duration="21363000" />
       <workItem from="1474586299972" duration="6915000" />
       <workItem from="1474618745094" duration="2244000" />
-      <workItem from="1474627606550" duration="12767000" />
+      <workItem from="1474627606550" duration="16150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418672000" />
+    <option name="totallyTimeSpent" value="422055000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1642,8 +1553,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1366" y="24" width="1366" height="711" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1366" height="711" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1656,7 +1567,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18030304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18030304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2621212" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1835,14 +1746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/media.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1995,14 +1898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1705">
-          <caret line="749" column="19" selection-start-line="749" selection-start-column="19" selection-end-line="749" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -2029,8 +1924,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        <state relative-caret-position="144">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/media.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="186" column="19" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
           <folding />
         </state>
       </provider>
