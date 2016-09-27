@@ -155,14 +155,24 @@
         padding: 10px;
         height: 115px;
     }
+    .uploads-users img {
+        margin: 10px 0;
+    }
+    .uploads-users .content-description > li {
+        font-size: 1.1em;
+    }
     .content-description {
         padding-left: 8px;
     }
     .users-state {
-        right: 35px;
+        right: 45px;
+        line-height: 90px;
     }
     .users-state li {
         padding: 0 10px;
+    }
+    .uploads-users .deleter {
+        margin: 30px 10px;
     }
     .redact {
         left: -97px;
@@ -262,6 +272,9 @@
     .menus i{
         display: none;
     }
+    .courses {
+        height: inherit!important;
+    }
     .courses ul a {
         font-size: 0.9em;
     }
@@ -282,6 +295,7 @@
     }
     .courses section p {
         margin: 0 0 20px 5px;
+        font-size: 1em;
     }
     .types {
         display: table;
@@ -319,9 +333,13 @@
     .write-outline {
         margin: 10px 0 10px 0;
         height: 70px;
+        font-size: 1.1em;
+    }
+    .write-outline form input {
+        line-height: 40px;
     }
     .outline-params {
-        line-height: 69px;
+        line-height: 69px!important;
     }
     .name-items {
         position: absolute;
@@ -392,13 +410,39 @@
         font-size: 1.2em;
     }
     .uploads-users .deleter {
+        top: 20px;
         margin: 0 10px;
+    }
+    .uploads-user-info {
+        height: 60px;
+    }
+    .uploads-user-info p {
+        margin: 0;
+    }
+    .uploads-user-info p span {
+        font-size: 1.1em;
+    }
+    .settings span{
+        font-size: 1.1em;
+    }
+    .settings form label, settings form {
+        font-size: 1.1em;
+    }
+    .create-user span {
+        font-size: 1.1em;
+    }
+    .create-user form {
+        font-size: 1.2em;
     }
     .users-state {
         display: block;
         height: 20px;
         line-height: 20px;
-        right: 0;
+        right: 47px;
+    }
+    .users-state li{
+        padding: 0 10px;
+        font-size: 1.4em;
     }
     .redact {
         width: 360px;
@@ -428,13 +472,16 @@
     }
     .uploads-content .checkbox {
         margin: 0;
-        top: 24px;
+        top: 22px;
         right: 50px;
     }
     .uploads-content .deleter {
         margin: 0;
         top: 20px;
         right: 10px;
+    }
+    .uploads-content .deleter p {
+        font-size: 3em;
     }
 }
 
@@ -496,6 +543,7 @@
     }
     .users-state li{
         padding: 0 10px;
+        font-size: 1.1em;
     }
 
     .redact {

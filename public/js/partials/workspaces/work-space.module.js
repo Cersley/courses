@@ -1,2 +1,2 @@
-angular.module('workSpace', []);
+angular.module('workSpace', ['ngFileUpload']);
 

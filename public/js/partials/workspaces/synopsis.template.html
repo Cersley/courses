@@ -7,26 +7,24 @@
                         <div><span>2.Write Outline</span></div>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-12">
-
-                                <input type="text" placeholder="Edit title" ng-model="title" required>
-                                <input type="text" placeholder="Edit subtitle" ng-model="subtitle" required>
-
+                        <input type="text" placeholder="Edit title" ng-model="$ctrl.courseParam[0].title" required>
+                        <input type="text" placeholder="Edit subtitle" ng-model="$ctrl.courseParam[0].subtitle" required>
                     </div>
                     <div class="col-md-4 col-sm-4 name-items">
                         <span>{{'#' + $ctrl.courseParam[0].types}}</span>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHO?" ng-model="who" required>
+                        <textarea class="descriptions" placeholder="WHO?" ng-model="$ctrl.courseParam[0].who" required>
 
                         </textarea>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHY?" ng-model="why" required>
+                        <textarea class="descriptions" placeholder="WHY?" ng-model="$ctrl.courseParam[0].why" required>
 
                         </textarea>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <textarea class="descriptions" placeholder="WHAT?" ng-model="what" required>
+                        <textarea class="descriptions" placeholder="WHAT?" ng-model="$ctrl.courseParam[0].what" required>
 
                         </textarea>
                     </div>
@@ -34,9 +32,12 @@
                         <div class="button-wrap">
                             <button type="submit"
                                     class="btn btn-primary"
-                                    ng-click="$ctrl.addSynopsisOfCourse(title, subtitle, who, why, what,
+                                    ng-click="$ctrl.addSynopsisOfCourse($ctrl.courseParam[0].title,
+                                    $ctrl.courseParam[0].subtitle, $ctrl.courseParam[0].who,
+                                    $ctrl.courseParam[0].why, $ctrl.courseParam[0].what,
                                     $ctrl.courseParam[0].id)">Save</button>
-                            <a href="/workspace" ng-click="" class="btn btn-primary">Cancel</a>
+                            <button ng-click="$ctrl.go('/workspace')"
+                                    class="btn btn-primary">Cancel</button>
                         </div>
                     </div>
                 </form>

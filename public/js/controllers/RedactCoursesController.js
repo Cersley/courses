@@ -19,6 +19,13 @@ app.controller("RedactCoursesController",
                 $anchorScroll();
             }, 500);
     }
+    $scope.addTypes = function(typeOfCourse, courseId) {
+        if (typeOfCourse === undefined) {
+            $location.url('/courses/construction');
+        } else {
+            $http.put('/courses/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
+        }
+    }
     $scope.addSynopsisOfCourse = function(titleOfCourse, subtitleOfCourse,
                                         whoOfCourse, whyOfCourse, whatOfCourse, courseId) {
         $http.put('/courses/addSynopsis/' + courseId,
@@ -45,13 +52,25 @@ app.controller("RedactCoursesController",
             }
         )
     }
-    $http.get('/courses/images')
+    $http.get('/courses/uploads')
         .then(function successCallback(img) {
-            $scope.images = img.data;
+            $scope.uploads = img.data;
         }, function errorCallback(err) {
             console.log('error', err);
         });
-    $scope.addImg = function(img, courseId) {
-        $http.put('/courses/addImg/' + courseId, {upload: img, courseId: courseId})
+    $scope.removeResourse = function(resourseId, $index) {
+        $scope.uploads.splice($index, 1);
+        $http.delete('/courses/removeResourse/' + resourseId);
+    };
+    // $scope.addImg = function (uploadResourses) {
+    //     $http.put('/courses/addImg/' + $scope.paramId, {upload: uploadResourses});
+    // }
+    $scope.addImg = function (uploadResourses) {
+        if (Object.keys($scope.uploaded).length === 0) {
+            $location.url('/redactCourse/' + paramId);
+        } else {
+            $http.put('/courses/addImg/' + $scope.paramId, {upload: uploadResourses});
+        }
     }
+    $scope.uploaded = {};
 });

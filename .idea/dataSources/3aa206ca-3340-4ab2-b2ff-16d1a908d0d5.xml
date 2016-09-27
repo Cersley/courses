@@ -17,8 +17,8 @@
     <schema id="5" parent="1" name="public">
       <object-id>2200</object-id>
       <visible>1</visible>
-      <introspection-state-number>1266</introspection-state-number>
-      <introspection-timestamp>2016-09-19.12:29:11.584</introspection-timestamp>
+      <introspection-state-number>2477</introspection-state-number>
+      <introspection-timestamp>2016-09-26.22:44:23.227</introspection-timestamp>
     </schema>
     <schema id="6" parent="1" name="pg_catalog">
       <object-id>11</object-id>
@@ -39,97 +39,167 @@
       <object-id>16389</object-id>
       <state-number>670</state-number>
     </sequence>
-    <sequence id="12" parent="5" name="users_id_seq">
+    <sequence id="12" parent="5" name="uploads_id_seq">
+      <object-id>16504</object-id>
+      <state-number>2428</state-number>
+    </sequence>
+    <sequence id="13" parent="5" name="users_id_seq">
       <object-id>16472</object-id>
       <state-number>1266</state-number>
     </sequence>
-    <table id="13" parent="5" name="courses">
+    <table id="14" parent="5" name="courses">
       <object-id>16391</object-id>
-      <state-number>670</state-number>
+      <state-number>2477</state-number>
     </table>
-    <table id="14" parent="5" name="users">
+    <table id="15" parent="5" name="uploads">
+      <object-id>16506</object-id>
+      <state-number>2441</state-number>
+    </table>
+    <table id="16" parent="5" name="users">
       <object-id>16463</object-id>
       <state-number>1266</state-number>
     </table>
-    <column id="15" parent="13" name="id">
+    <column id="17" parent="14" name="id">
       <state-number>670</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
       <default-expression>nextval(&apos;courses_id_seq&apos;::regclass)</default-expression>
     </column>
-    <column id="16" parent="13" name="avatar">
+    <column id="18" parent="14" name="avatar">
       <state-number>670</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="17" parent="13" name="name">
+    <column id="19" parent="14" name="place">
       <state-number>670</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="18" parent="13" name="status">
-      <state-number>670</state-number>
+    <column id="20" parent="14" name="types">
+      <state-number>1369</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="19" parent="13" name="place">
-      <state-number>670</state-number>
+    <column id="21" parent="14" name="title">
+      <state-number>1370</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <index id="20" parent="13" name="courses_pkey">
+    <column id="22" parent="14" name="subtitle">
+      <state-number>1804</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="23" parent="14" name="who">
+      <state-number>1372</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="24" parent="14" name="why">
+      <state-number>1373</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="25" parent="14" name="what">
+      <state-number>1374</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="26" parent="14" name="purpose goal">
+      <state-number>1375</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="27" parent="14" name="learning content">
+      <state-number>1376</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="28" parent="14" name="activites">
+      <state-number>1377</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="29" parent="14" name="learning course">
+      <state-number>1378</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="30" parent="14" name="learning goals">
+      <state-number>1379</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="31" parent="14" name="upload">
+      <state-number>2477</state-number>
+      <data-type>json|0</data-type>
+    </column>
+    <index id="32" parent="14" name="courses_pkey">
       <object-id>16398</object-id>
       <columns>id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="21" parent="13" name="courses_pkey">
+    <key id="33" parent="14" name="courses_pkey">
       <object-id>16399</object-id>
       <columns>id</columns>
       <underlying-index>courses_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="22" parent="14" name="name">
+    <column id="34" parent="15" name="id">
+      <state-number>2428</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;uploads_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="35" parent="15" name="images">
+      <state-number>2441</state-number>
+      <data-type>json|0</data-type>
+    </column>
+    <index id="36" parent="15" name="uploads_pkey">
+      <object-id>16513</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="37" parent="15" name="uploads_pkey">
+      <object-id>16514</object-id>
+      <columns>id</columns>
+      <underlying-index>uploads_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="38" parent="16" name="name">
       <state-number>1249</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="23" parent="14" name="role">
+    <column id="39" parent="16" name="role">
       <state-number>1249</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="24" parent="14" name="password">
+    <column id="40" parent="16" name="password">
       <state-number>1250</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="25" parent="14" name="stars">
+    <column id="41" parent="16" name="stars">
       <state-number>1249</state-number>
       <data-type>integer|0</data-type>
     </column>
-    <column id="26" parent="14" name="avatar">
+    <column id="42" parent="16" name="avatar">
       <state-number>1254</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="27" parent="14" name="email">
+    <column id="43" parent="16" name="email">
       <state-number>1256</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="28" parent="14" name="department">
+    <column id="44" parent="16" name="department">
       <state-number>1257</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="29" parent="14" name="lastlogged">
+    <column id="45" parent="16" name="lastlogged">
       <state-number>1258</state-number>
       <data-type>varchar|0</data-type>
     </column>
-    <column id="30" parent="14" name="id">
+    <column id="46" parent="16" name="id">
       <state-number>1266</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
       <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
     </column>
-    <index id="31" parent="14" name="users_pkey">
+    <index id="47" parent="16" name="users_pkey">
       <object-id>16475</object-id>
       <columns>id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="32" parent="14" name="users_pkey">
+    <key id="48" parent="16" name="users_pkey">
       <object-id>16476</object-id>
       <columns>id</columns>
       <underlying-index>users_pkey</underlying-index>

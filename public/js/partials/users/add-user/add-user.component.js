@@ -2,11 +2,12 @@ angular.
     module('addUser').
     component('addUser', {
         templateUrl: 'js/partials/users/add-user/add-user.template.html',
-        controller: function AddUserController($http, $route, $location) {
+        controller: function AddUserController($http, $route, $location, $timeout) {
             var self = this;
             self.createUser = function(hash) {
-                alert('User ' + self.userData.name + ' was create');
-                $location.path(hash)
+                $timeout(function () {
+                    $location.path(hash);
+                }, 300);
                 $http.post('/users/createUser/', self.userData)
                     .then(function successCallback() {
                         self.userData = {};

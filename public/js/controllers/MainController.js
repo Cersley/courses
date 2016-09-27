@@ -1,4 +1,4 @@
-app.controller("MainController",  function($scope, $route,  $location, $window, $routeParams, $http) {
+app.controller("MainController",  function($scope, $route,  $location, $routeParams, $http, $templateCache) {
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
@@ -31,6 +31,9 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
     $scope.createCourse = function () {
         $http.post('/courses/create', self.courseData)
             .then(function successCallback() {
+                var currentPageTemplate = $route.current.templateUrl;
+                $templateCache.remove(currentPageTemplate);
+                $route.reload();
                 self.courseData = {};
             }, function errorCallback(err) {
                 console.log('error', err);
@@ -41,7 +44,9 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
         $http.delete('/courses/remove/' + courseId);
     };
     $scope.updatePlaceCourse = function(courseId, kindOfItem) {
-        $window.location.reload();
+        var currentPageTemplate = $route.current.templateUrl;
+        $templateCache.remove(currentPageTemplate);
+        $route.reload();
         $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId})
             .then(function successCallback(courseInfo) {
                 $scope.coursesData = courseInfo.data;
@@ -49,23 +54,5 @@ app.controller("MainController",  function($scope, $route,  $location, $window, 
                 console.log('error', err);
             });
     }
-    $scope.uploads = [
-        {
-            id: "1",
-            name: "file1",
-            avatar: "http://loremflickr.com/70/70",
-            created: "new Data",
-            size: "54",
-            check: "1"
-        },
-        {
-            id: "2",
-            name: "file2",
-            avatar: "http://loremflickr.com/70/70",
-            created: "new Data",
-            size: "45",
-            check: "2"
-        }
-    ]
 });
 

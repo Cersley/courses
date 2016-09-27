@@ -4,7 +4,6 @@ angular.
         templateUrl: 'js/partials/users/user-list/user-list.template.html',
         controller: function UserListController($http, $anchorScroll, $location) {
                 var self = this;
-                // self.userId = $routeParams.userId;
                 self.usersData = {};
                 $http.get('/users/list')
                     .then(function successCallback(userInfo) {

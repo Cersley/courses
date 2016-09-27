@@ -20,28 +20,32 @@
                                 <span class="upload-user act-us">My resourses</span>
                                 <label class="btn btn-primary uploads-button">
                                     <span>Upload resourse</span>
-                                    <input type="file" name="files" fileread="file">
+                                    <input type="file" name="file" fileread="file">
                                 </label>
                                 <div class="uploads-red-square">4</div>
                             </section>
-                            <section class="uploads-content" ng-repeat="up in images">
-                                <img ng-src={upload}} alt="">
+                            <section class="uploads-content" ng-repeat="up in uploads">
+                                <img ng-src="{{up.images.src}}">
                                 <ul class="content-description">
-                                    <li>name: {{up.update}}</li>
-                                    <li><span>Created: </span>{{up.created}}</li>
-                                    <li><span>Size: </span>{{up.size}}</li>
+                                    <li>{{up.images.name}}</li>
+                                    <li><span>Created: </span>
+                                        {{up.images.created |  date:'medium'}}
+                                    </li>
+                                    <li><span>Size: </span>{{up.images.size/1024 | number:2}} KB</li>
                                 </ul>
                                 <div class="checkbox">
-                                    <input type="checkbox" id="{{up.id}}">
+                                    <input type="checkbox" ng-model="uploaded[$index]" id="{{up.id}}"
+                                           ng-true-value="{{up}}" ng-false-value="{{undefined}}"
+                                           ng-checked="courseData[0].upload[$index].images.src === up.images.src">
                                     <label for="{{up.id}}"></label>
                                 </div>
-                                <span class="deleter"><p ng-click="images.splice($index, 1)">&times</p></span>
+                                <span class="deleter"><p ng-click="removeResourse(up.id, $index)">&times</p></span>
                             </section>
                         </article>
                         <div class="button-wrap">
-                            <button type="submit"
-                                    ng-click="addImg(file, courseData[0].id)" class="btn btn-primary">Save</button>
-                            <a href="/redactCourse/{{paramId}}" class="btn btn-primary">Cancel</a>
+                            <button type="submit" ng-click="addImg(uploaded)" class="btn btn-primary">Save</button>
+                            <button ng-click="go('/redactCourse/' + paramId)"
+                                    class="btn btn-primary">Cancel</button>
                         </div>
                     </form>
                 </div>

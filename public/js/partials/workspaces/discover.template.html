@@ -41,23 +41,28 @@
             <div class="discover-wrap">
                 <div class="goals">
                     <label for="purposeGoal">PURPOSE GOAL</label>
-                    <textarea name="" id="purposeGoal" placeholder="we" ng-model="purposeGoal" required></textarea>
+                    <textarea name="" id="purposeGoal" placeholder="we"
+                              ng-model="$ctrl.courseParam[0]['purpose goal']" required></textarea>
                 </div>
                 <div class="goals">
                     <label for="learningContent">LEARNING CONTENT</label>
-                    <textarea name="" id="learningContent" placeholder="we" ng-model="learningContent" required></textarea>
+                    <textarea name="" id="learningContent" placeholder="we"
+                              ng-model="$ctrl.courseParam[0]['learning content']" required></textarea>
                 </div>
                 <div class="goals">
                     <label for="activites">ACTIVITES</label>
-                    <textarea name="" id="activites" placeholder="we" ng-model="activites" required></textarea>
+                    <textarea name="" id="activites" placeholder="we"
+                              ng-model="$ctrl.courseParam[0].activites" required></textarea>
                 </div>
                 <div class="goals">
                     <label for="learningCourse">LEARNING COURSE</label>
-                    <textarea name="" id="learningCourse" placeholder="we" ng-model="learningCourse" required></textarea>
+                    <textarea name="" id="learningCourse" placeholder="we"
+                              ng-model="$ctrl.courseParam[0]['learning course']" required></textarea>
                 </div>
                 <div class="goals">
                     <label for="learningGoals">LEARNING GOALS</label>
-                    <textarea name="" id="learningGoals" placeholder="we" ng-model="learningGoals" required></textarea>
+                    <textarea name="" id="learningGoals" placeholder="we"
+                              ng-model="$ctrl.courseParam[0]['learning goals']" required></textarea>
                 </div>
             </div>
         </div>
@@ -65,10 +70,10 @@
         <div class="col-md-12">
             <div class="button-wrap">
                 <button type="submit"
-                        ng-click="$ctrl.addDiscoverOfCourse(purposeGoal, learningContent, activites,
-                        learningCourse, learningGoals, $ctrl.courseParam[0].id)"
+                        ng-click="$ctrl.addDiscoverOfCourse()"
                         class="btn btn-primary">Save</button>
-                <a href="/workspace" type="button" class="btn btn-primary">Cancel</a>
+                <button ng-click="$ctrl.go('/workspace')"
+                        class="btn btn-primary">Cancel</button>
             </div>
         </div>
     </form>

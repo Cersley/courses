@@ -24,7 +24,12 @@ angular
                 $http.put('/courses/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
             }
             self.createArea = function(courseId, kindOfItem) {
-                $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId})
+                $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId});
+                $timeout(function () {
+                    var currentPageTemplate = $route.current.templateUrl;
+                    $templateCache.remove(currentPageTemplate);
+                    $route.reload();
+                }, 300);
             }
         }
     })
@@ -72,22 +77,21 @@ angular
                         $anchorScroll();
                     }, 500);
             }
+
             $http.get('/courses/courseParam')
                 .then(function successCallback(course) {
                     self.courseParam = course.data;
                 }, function errorCallback(err) {
                     console.log('error', err);
                 });
-            self.addDiscoverOfCourse = function(purposeGoal, learningContent, activites, learningCourse,
-                                                learningGoals, courseId) {
-                $http.put('/courses/addDiscover/' + courseId,
+            self.addDiscoverOfCourse = function() {
+                $http.put('/courses/addDiscover/' + self.courseParam[0].id,
                     {
-                        purposeGoal: purposeGoal,
-                        learningContent: learningContent,
-                        activites: activites,
-                        learningCourse: learningCourse,
-                        learningGoals: learningGoals,
-                        courseId: courseId
+                        purposeGoal: self.courseParam[0]['purpose goal'],
+                        learningContent: self.courseParam[0]['learning content'],
+                        activites: self.courseParam[0].activites,
+                        learningCourse: self.courseParam[0]['learning course'],
+                        learningGoals: self.courseParam[0]['learning goals']
                     }
                 )
             }
@@ -95,7 +99,8 @@ angular
     })
     .component('upload', {
             templateUrl: 'js/partials/workspaces/upload.template.html',
-            controller: function WorkspaceController($location, $anchorScroll, $scope, $http, $timeout) {
+            controller: function WorkspaceController(Upload, $location, $anchorScroll, $templateCache,
+                                                     $scope, $http, $route, $timeout ) {
                 var self = this;
                 self.go = function (hash) {
                     $timeout(function () {
@@ -104,55 +109,39 @@ angular
                         $anchorScroll();
                     }, 500);
                 }
+
                 self.courseParam = [];
                 $http.get('/courses/courseParam')
                     .then(function successCallback(course) {
                         self.courseParam = course.data;
+                        console.log(self.courseParam);
                     }, function errorCallback(err) {
                         console.log('error', err);
                     });
-                self.images = [];
-                $http.get('/courses/images')
+                self.uploads = [];
+                $http.get('/courses/uploads')
                     .then(function successCallback(img) {
-                        self.images = img.data;
+                        self.uploads = img.data;
                     }, function errorCallback(err) {
                         console.log('error', err);
                     });
-                self.addImg = function(img, courseId) {
-                    $http.put('/courses/addImg/' + courseId, {upload: img, courseId: courseId})
-                }
-                $scope.uploadFile = function(event) {
-                    $scope.files = event.target.files;
-                    var reader = new FileReader();
-                    reader.onloadend = function(res) {
-                        $scope.$apply(function () {
-                            $scope.img = res.currentTarget.result;
-                        });
-                    }
-                    reader.readAsDataURL(file);
+                $scope.removeResourse = function(resourseId, $index) {
+                    self.uploads.splice($index, 1);
+                    $http.delete('/courses/removeResourse/' + resourseId);
                 };
-                self.uploads = [
-                    {
-                        id: "1",
-                        name: "file1",
-                        avatar: "http://loremflickr.com/70/70",
-                        created: "new Data",
-                        size: "54",
-                        check: "1"
-                    },
-                    {
-                        id: "2",
-                        name: "file2",
-                        avatar: "http://loremflickr.com/70/70",
-                        created: "new Data",
-                        size: "45",
-                        check: "2"
+                self.addImg = function (uploadResourses) {
+                    if (Object.keys($scope.uploaded).length === 0) {
+                        $location.url('/workspace');
+                    } else {
+                        $http.put('/courses/addImg/' + self.courseParam[0].id, {upload: uploadResourses});
                     }
-                ]
+                }
+                $scope.uploaded = {};
             }
         }
     )
-    .directive("fileread", [function () {
+    .directive("fileread", ['$http','$templateCache', '$route', '$timeout',
+        function ($http, $templateCache, $route, $timeout) {
         return {
             scope: {
                 fileread: "="
@@ -162,9 +151,21 @@ angular
                     var reader = new FileReader();
                     reader.onloadend = function (loadEvent) {
                         scope.$apply(function () {
-                            scope.fileread = loadEvent.target.result;
+                            scope.img = {
+                                name: changeEvent.target.files[0].name,
+                                size: changeEvent.target.files[0].size,
+                                created: new Date(),
+                                src: loadEvent.target.result
+                            };
+                            $http.post('/courses/addResourse', {images: scope.img})
+                            $timeout(function () {
+                                var currentPageTemplate = $route.current.templateUrl;
+                                $templateCache.remove(currentPageTemplate);
+                                $route.reload();
+                            }, 100);
+
                         });
-                    }
+                    };
                     reader.readAsDataURL(changeEvent.currentTarget.files[0]);
                 });
             }

@@ -28,8 +28,10 @@ module.exports = {
     addTypesOfCourse: addTypesOfCourse,
     addDiscoverOfCourse: addDiscoverOfCourse,
     addImg: addImg,
-    getImg: getImg,
-    getSelectedCourse: getSelectedCourse
+    getSelectedCourse: getSelectedCourse,
+    getUploads: getUploads,
+    addResourse: addResourse,
+    removeResourse: removeResourse
 };
 
 
@@ -76,9 +78,9 @@ function updatePlaceCourse(req, res) {
 }
 
 function createCourse(req, res) {
-    db.none("insert into courses (avatar, name, status, place, types, title, subtitle, who, why, what," +
+    db.none("insert into courses (avatar, place, types, title, subtitle, who, why, what," +
         "\"purpose goal\", \"learning content\", activites, \"learning course\", \"learning goals\")" +
-        "values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)",
+        "values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)",
         [req.body.avatar,
         req.body.name,
         req.body.status,
@@ -112,7 +114,6 @@ function getCourseParam(req, res) {
         });
 }
 function addTypesOfCourse(req, res) {
-    console.log(req.body);
     db.none("update courses set types=$1 where id=$2", [req.body.types, req.params.courseId])
         .then(function () {
             res.send();
@@ -163,8 +164,30 @@ function addImg(req, res) {
             console.log(error);
         });
 }
-function getImg(req, res) {
-    db.any("SELECT id, upload from courses")
+
+
+// UPLOADS
+
+function getUploads(req, res) {
+    db.any("SELECT * from uploads")
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function addResourse(req, res) {
+    db.none("insert into uploads (images) values($1)", [req.body.images])
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function removeResourse(req, res) {
+    db.result('delete from uploads where id = $1', [req.params.resourseId])
         .then(function (data) {
             res.send(data);
         })
