@@ -8,7 +8,7 @@ angular.
                 $timeout(function () {
                     $location.path(hash);
                 }, 300);
-                $http.post('/users/createUser/', self.userData)
+                $http.post('/users', self.userData)
                     .then(function successCallback() {
                         self.userData = {};
                     }, function errorCallback(err) {

@@ -2,30 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dca9827-4ed5-4543-ab3c-15a9063de477" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/services/courses.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/noimg.jpg" afterPath="$PROJECT_DIR$/public/img/noimg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/usernoimg.png" afterPath="$PROJECT_DIR$/public/img/usernoimg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/3aa206ca-3340-4ab2-b2ff-16d1a908d0d5.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/3aa206ca-3340-4ab2-b2ff-16d1a908d0d5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/media.css" afterPath="$PROJECT_DIR$/public/css/media.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/MainController.js" afterPath="$PROJECT_DIR$/public/js/controllers/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js" afterPath="$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/construction.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/construction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/red-discover.template.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-discover.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/red-synopsis.template.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-synopsis.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.template.html" afterPath="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common.js" afterPath="$PROJECT_DIR$/public/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.component.js" afterPath="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html" afterPath="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js" afterPath="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html" afterPath="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js" afterPath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/synopsis.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/synopsis.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.module.js" afterPath="$PROJECT_DIR$/public/js/partials/workspaces/work-space.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" afterPath="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/queries.js" afterPath="$PROJECT_DIR$/routes/queries.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/routes.js" afterPath="$PROJECT_DIR$/routes/routes.js" />
     </list>
@@ -55,7 +40,38 @@
     <favorites_list name="traineeship" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="queries.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/queries.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="227" column="39" selection-start-line="227" selection-start-column="39" selection-end-line="227" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,8 +107,6 @@
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/workspace.module.js" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/select-type.js" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html" />
-        <option value="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/workspace1.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/workspace3.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/workspace2.template.html" />
@@ -102,7 +116,6 @@
         <option value="$PROJECT_DIR$/public/js/partials/courses/deletion.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/intern.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/public.html" />
-        <option value="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/redact-coures.module.js" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/react-course.component.js" />
@@ -115,22 +128,25 @@
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/red-synopsis.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/discover.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/red-discover.template.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/work-space.module.js" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/public/js/directives/courses.js" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/upload.template.html" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/routes/queries.js" />
         <option value="$PROJECT_DIR$/public/js/controllers/MainController.js" />
         <option value="$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js" />
-        <option value="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js" />
-        <option value="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js" />
         <option value="$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js" />
-        <option value="$PROJECT_DIR$/public/js/common.js" />
         <option value="$PROJECT_DIR$/public/js/partials/courses/redact/red-uploads.template.html" />
+        <option value="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/routes/queries.js" />
+        <option value="$PROJECT_DIR$/public/js/common.js" />
+        <option value="$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html" />
+        <option value="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html" />
         <option value="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.component.js" />
+        <option value="$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html" />
+        <option value="$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js" />
       </list>
     </option>
   </component>
@@ -144,6 +160,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1366" />
     <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="711" />
@@ -1674,12 +1691,12 @@
       <workItem from="1474793583577" duration="25853000" />
       <workItem from="1474887643135" duration="21668000" />
       <workItem from="1474916717475" duration="7914000" />
-      <workItem from="1474977427830" duration="17073000" />
+      <workItem from="1474977427830" duration="19077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="495540000" />
+    <option name="totallyTimeSpent" value="497544000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1691,7 +1708,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="711" extended-state="6" />
+    <frame x="-1366" y="24" width="1366" height="711" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1700,7 +1717,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31484503" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31484503" sideWeight="0.4969697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31973898" sideWeight="0.4969697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1768,13 +1785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse1.html" />
     <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse2.html" />
     <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/redactCourse3.html" />
@@ -1813,13 +1823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1932,14 +1935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2322">
-          <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/redact-course.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1948,42 +1943,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controllers/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-252">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2004,38 +1967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cad57b99/3aa206ca-3340-4ab2-b2ff-16d1a908d0d5/courses_editor.public.courses">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="upload" languageId="JSON" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/partials/courses/redact/red-synopsis.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -2052,10 +1983,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/add-user/add-user.component.js">
+    <entry file="dbDummy://dbtable:/cad57b99/3aa206ca-3340-4ab2-b2ff-16d1a908d0d5/courses_editor.public.courses">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="upload" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="73" column="60" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-list/user-list.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-list/user-list.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/RedactCoursesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1269">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-702">
+          <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="227" column="39" selection-start-line="227" selection-start-column="39" selection-end-line="227" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-info/user-info.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/user-info/user-info.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -2073,18 +2084,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/workspaces/work-space.component.js">
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="44" column="28" selection-start-line="40" selection-start-column="20" selection-end-line="44" selection-end-column="28" />
+        <state relative-caret-position="126">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/partials/users/add-user/add-user.template.html">
+    <entry file="file://$PROJECT_DIR$/public/js/partials/users/add-user/add-user.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="252">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
           <folding />
         </state>
       </provider>

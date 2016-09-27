@@ -1,14 +1,13 @@
 <article class="upload-wrapper">
     <section class="upload-header">
-        <span class="upload-users"><a href="/users">Users</a></span>
+        <span class="upload-users"><a href="/allUsers">Users</a></span>
         <span class="upload-user act-us">User</span>
         <a href="/users/addUser" class="btn btn-primary uploads-users-button">Add user</a>
     </section>
     <section class="uploads-user-info">
         <p>
-            <span>Username: <b>{{$ctrl.params.userName}}</b></span>
-            <span>Role: {{$ctrl.params.userRole}}</span>
-            <span></span>
+            <span>Username: <b>{{$ctrl.user[0].name}}</b></span>
+            <span>Role: {{$ctrl.user[0].role}}</span>
         </p>
     </section>
     <div class="settings">

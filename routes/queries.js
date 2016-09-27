@@ -20,6 +20,7 @@ module.exports = {
     updatePlaceCourse: updatePlaceCourse,
     getAllUsers: getAllUsers,
     removeUser: removeUser,
+    getUser: getUser,
     updateUserPassword: updateUserPassword,
     createUser: createUser,
     createCourse: createCourse,
@@ -48,7 +49,6 @@ function getAllCourses(req, res) {
         });
 }
 function getSelectedCourse(req, res) {
-    console.log("REQUEST DATA: ", req);
     db.any('select * from courses where id = $1', req.params.courseId)
         .then(function (data) {
             res.send(data);
@@ -58,8 +58,7 @@ function getSelectedCourse(req, res) {
         });
 }
 function removeCourse(req, res) {
-    var courseId = req.params.course_id;
-    db.result('delete from courses where id = $1', courseId)
+    db.result('delete from courses where id = $1', req.params.courseId)
         .then(function (data) {
             res.send(data);
         })
@@ -139,8 +138,8 @@ function addSynopsisOfCourse(req, res) {
         });
 }
 function addDiscoverOfCourse(req, res) {
-    console.log(req.body)
-    db.none("update courses set \"purpose goal\"=$1, \"learning content\"=$2, \"activites\"=$3, \"learning course\"=$4, \"learning goals\"=$5 where id=$6",
+    db.none("update courses set \"purpose goal\"=$1, \"learning content\"=$2, \"activites\"=$3, " +
+        "\"learning course\"=$4, \"learning goals\"=$5 where id=$6",
         [req.body.purposeGoal,
             req.body.learningContent,
             req.body.activites,
@@ -208,9 +207,17 @@ function getAllUsers(req, res) {
             console.log(error);
         });
 }
+function getUser(req, res) {
+    db.any('select * from users where id=$1', req.params.userId)
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 function removeUser(req, res) {
-    var userId = req.params.user_id;
-    db.result('delete from users where id = $1', userId)
+    db.result('delete from users where id = $1', req.params.userId)
         .then(function (data) {
             res.send(data);
         })
@@ -219,7 +226,7 @@ function removeUser(req, res) {
         });
 }
 function updateUserPassword(req, res) {
-    db.none("update users set password=$1 where id=$2", [req.body.password, req.params.user_id])
+    db.none("update users set password=$1 where id=$2", [req.body.password, req.params.userId])
         .then(function (data) {
             res.send(data);
         })

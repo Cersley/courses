@@ -1,11 +1,11 @@
 <article class="upload-wrapper">
     <section class="upload-header">
-        <span class="upload-users" id="top"><a href="/users">Users</a></span>
+        <span class="upload-users" id="top"><a href="/allUsers">Users</a></span>
         <span class="upload-user act-us">Add user</span>
     </section>
     <section class="create-user">
         <span>Create new user:</span>
-        <form name="AddUser" ng-submit="$ctrl.createUser('/users')">
+        <form name="AddUser" ng-submit="$ctrl.createUser('/allUsers')">
             <label for="new-name">Name *</label>
             <input type="text" id="new-name" class="input-new" ng-model="$ctrl.userData.name" required>
             <label for="new-email">Email *</label>

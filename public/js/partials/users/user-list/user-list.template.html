@@ -7,7 +7,7 @@
         <section class="uploads-users">
             <img ng-src="img/{{user.avatar || 'usernoimg.png'}}" alt="">
             <ul class="content-description">
-                <li><a href="/users/{{user.id}}/{{user.name}}/{{user.role}}" ng-click="$ctrl.goToUser()">{{user.name}}</a></li>
+                <li><a href="/userInfo/{{user.id}}" ng-click="$ctrl.goToUser()">{{user.name}}</a></li>
                 <li>Email: {{user.email}}</li>
                 <li>Department: {{user.department}}</li>
                 <li>Role: {{user.role}}</li>

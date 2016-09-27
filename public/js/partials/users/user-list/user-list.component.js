@@ -5,7 +5,7 @@ angular.
         controller: function UserListController($http, $anchorScroll, $location) {
                 var self = this;
                 self.usersData = {};
-                $http.get('/users/list')
+                $http.get('/users')
                     .then(function successCallback(userInfo) {
                         self.usersData = userInfo.data;
                     }, function errorCallback(err) {
@@ -13,7 +13,7 @@ angular.
                     });
                 self.removeUser = function(userId, item) {
                     self.usersData.splice(item, 1);
-                    $http.delete('/users/remove/' + userId);
+                    $http.delete('/users/' + userId);
                 };
                 self.goToUser = function() {
                     $location.hash('top')

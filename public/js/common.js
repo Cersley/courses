@@ -59,11 +59,11 @@ app.config(function($routeProvider, $locationProvider) {
         })
 
 
-        .when('/users', {
+        .when('/allUsers', {
             template: '<user-list></user-list>',
             activetab: 'users'
         })
-        .when('/users/:userId/:userName/:userRole', {
+        .when('/userInfo/:userId', {
             template: '<user-info></user-info>',
             // controller: 'UserListController',
             activetab: 'users',
