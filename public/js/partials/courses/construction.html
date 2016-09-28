@@ -14,22 +14,18 @@
                 </div>
             </a>
             <span class="delete-course"><p ng-click="removeCourse(course.id, $index)">&times</p></span>
-            <select ng-model="selected"
-                    ng-options="x as x.name for x in availableCourses"
-                    ng-change="updatePlaceCourse(course.id, selected.name)">
-            </select>
-            <!--<div class="btn-group select" ng-class="{open: actionTriggered}">-->
-                <!--<button ng-click="triggerMenu(course.id)" type="button"-->
-                        <!--class="btn btn-default dropdown-toggle selected" data-toggle="dropdown">-->
-                <!--</button>-->
-                <!--<ul class="dropdown-menu" role="menu">-->
-                    <!--<li ng-repeat="items in availableCourses" ng-click="triggerMenu()">-->
-                        <!--<a href="#" ng-click="updatePlaceCourse(course.id, items.name)">-->
-                            <!--<div ng-class="items.type"></div>{{items.name}}-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
+            <div class="btn-group select" ng-class="{open: actionTriggered === $index}">
+                <button ng-click="triggerMenu($index)" type="button"
+                        class="btn btn-default dropdown-toggle selected" data-toggle="dropdown">
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-repeat="items in availableCourses" ng-click="triggerMenu(false)">
+                        <a href="#" ng-click="updatePlaceCourse(course.id, items.name)">
+                            <div ng-class="items.type"></div>{{items.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div ng-class="{ow: $route.current.activedroptab === 'construction'}"></div>
     </section>

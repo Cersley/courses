@@ -13,7 +13,6 @@ angular
                     }, 500);
                 }
             }
-            self.courseParam = [];
             $http.get('/courseParam')
                 .then(function successCallback(course) {
                     self.courseParam = course.data;

@@ -16,11 +16,13 @@ app.controller("MainController",  function($scope, $route,  $location, $routePar
                 console.log('error', err);
             });
     });
-    $scope.actionTriggered = false;
-    $scope.triggerMenu = function(courseId) {
-        if (courseId) {
-            $scope.actionTriggered = !$scope.actionTriggered;
+    $scope.triggerMenu = function(index) {
+        if ($scope.actionTriggered !== index) {
+            $scope.actionTriggered = index;
+        } else {
+            $scope.actionTriggered = false;
         }
+
     }
     $scope.availableCourses = [
             {type: 'ow', name: 'construction'},

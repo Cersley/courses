@@ -281,19 +281,14 @@ main .wrapper {
 .courses section span:hover {
 	background-color: rgba(54, 71, 120, 0.8);
 }
-.courses section select {
+.courses section .select {
 	position: absolute;
 	right: 4px;
 	bottom: 4px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: transparent;
-	padding: 3px 15px;
 	text-align: center;
 	z-index: 2;
 }
-.courses section select{
+.courses section .selected{
 	border-radius: 50%;
 	width: 30px;
 	height: 30px;
@@ -322,15 +317,15 @@ main .wrapper {
 .courses section .bw {
 	background-color: #0000ff;
 }
-/*.courses section .dropdown-menu div {*/
-	/*display: inline-block;*/
-	/*border-radius: 50%;*/
-	/*width: 1.42857143em;*/
-	/*height: 1.42857143em;*/
-	/*top: 4px;*/
-	/*position: relative;*/
-	/*margin: 0 4px 0 0;*/
-/*}*/
+.courses section .dropdown-menu div {
+	display: inline-block;
+	border-radius: 50%;
+	width: 1.42857143em;
+	height: 1.42857143em;
+	top: 4px;
+	position: relative;
+	margin: 0 4px 0 0;
+}
 
 
 /*Setap course main*/

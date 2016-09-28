@@ -147,8 +147,8 @@ function addDiscoverOfCourse(req, res) {
             req.body.learningGoals,
             req.params.courseId]
     )
-        .then(function () {
-            res.send();
+        .then(function (data) {
+            res.send(data);
         })
         .catch(function (error) {
             console.log(error);
@@ -156,8 +156,8 @@ function addDiscoverOfCourse(req, res) {
 }
 function addImg(req, res) {
     db.none("update courses set upload=$1 where id=$2", [req.body.upload, req.params.courseId])
-        .then(function () {
-            res.send();
+        .then(function (data) {
+            res.send(data);
         })
         .catch(function (error) {
             console.log(error);
