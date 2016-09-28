@@ -114,8 +114,8 @@ function getCourseParam(req, res) {
 }
 function addTypesOfCourse(req, res) {
     db.none("update courses set types=$1 where id=$2", [req.body.types, req.params.courseId])
-        .then(function () {
-            res.send();
+        .then(function (data) {
+            res.send(data);
         })
         .catch(function (error) {
             console.log(error);

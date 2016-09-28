@@ -14,17 +14,17 @@ angular
                 }
             }
             self.courseParam = [];
-            $http.get('/courses/courseParam')
+            $http.get('/courseParam')
                 .then(function successCallback(course) {
                     self.courseParam = course.data;
                 }, function errorCallback(err) {
                     console.log('error', err);
                 });
             self.addTypes = function(typeOfCourse, courseId) {
-                $http.put('/courses/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
+                $http.put('/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
             }
             self.createArea = function(courseId, kindOfItem) {
-                $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId});
+                $http.put('/updatePlace/' + courseId, {place: kindOfItem, courseId});
                 $timeout(function () {
                     var currentPageTemplate = $route.current.templateUrl;
                     $templateCache.remove(currentPageTemplate);
@@ -44,7 +44,7 @@ angular
                         $anchorScroll();
                     }, 500);
             }
-            $http.get('/courses/courseParam')
+            $http.get('/courseParam')
                 .then(function successCallback(course) {
                     self.courseParam = course.data;
                 }, function errorCallback(err) {
@@ -52,7 +52,7 @@ angular
                 });
             self.addSynopsisOfCourse = function(titleOfCourse, subtitleOfCourse,
                                                 whoOfCourse, whyOfCourse, whatOfCourse, courseId) {
-                $http.put('/courses/addSynopsis/' + courseId,
+                $http.put('/addSynopsis/' + courseId,
                     {
                         title: titleOfCourse,
                         subtitle: subtitleOfCourse,
@@ -78,14 +78,14 @@ angular
                     }, 500);
             }
 
-            $http.get('/courses/courseParam')
+            $http.get('/courseParam')
                 .then(function successCallback(course) {
                     self.courseParam = course.data;
                 }, function errorCallback(err) {
                     console.log('error', err);
                 });
             self.addDiscoverOfCourse = function() {
-                $http.put('/courses/addDiscover/' + self.courseParam[0].id,
+                $http.put('/addDiscover/' + self.courseParam[0].id,
                     {
                         purposeGoal: self.courseParam[0]['purpose goal'],
                         learningContent: self.courseParam[0]['learning content'],
@@ -111,7 +111,7 @@ angular
                 }
 
                 self.courseParam = [];
-                $http.get('/courses/courseParam')
+                $http.get('/courseParam')
                     .then(function successCallback(course) {
                         self.courseParam = course.data;
                         console.log(self.courseParam);
@@ -119,7 +119,7 @@ angular
                         console.log('error', err);
                     });
                 self.uploads = [];
-                $http.get('/courses/uploads')
+                $http.get('/uploads')
                     .then(function successCallback(img) {
                         self.uploads = img.data;
                     }, function errorCallback(err) {
@@ -127,13 +127,13 @@ angular
                     });
                 $scope.removeResourse = function(resourseId, $index) {
                     self.uploads.splice($index, 1);
-                    $http.delete('/courses/removeResourse/' + resourseId);
+                    $http.delete('/uploads/' + resourseId);
                 };
                 self.addImg = function (uploadResourses) {
                     if (Object.keys($scope.uploaded).length === 0) {
                         $location.url('/workspace');
                     } else {
-                        $http.put('/courses/addImg/' + self.courseParam[0].id, {upload: uploadResourses});
+                        $http.put('/addImg/' + self.courseParam[0].id, {upload: uploadResourses});
                     }
                 }
                 $scope.uploaded = {};
@@ -157,7 +157,7 @@ angular
                                 created: new Date(),
                                 src: loadEvent.target.result
                             };
-                            $http.post('/courses/addResourse', {images: scope.img})
+                            $http.post('/uploads', {images: scope.img})
                             $timeout(function () {
                                 var currentPageTemplate = $route.current.templateUrl;
                                 $templateCache.remove(currentPageTemplate);

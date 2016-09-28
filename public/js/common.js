@@ -1,22 +1,22 @@
 var app = angular.module("myApp", ['ngRoute', 'workSpace', 'userList', 'userInfo', 'addUser']);
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/courses/construction', {
+        .when('/construction', {
             templateUrl: "js/partials/courses/construction.html",
             activetab: 'courses',
             activedroptab: 'construction'
         })
-        .when('/courses/public', {
+        .when('/public', {
             templateUrl: "js/partials/courses/public.html",
             activetab: 'courses',
             activedroptab: 'public'
         })
-        .when('/courses/intern', {
+        .when('/intern', {
             templateUrl: "js/partials/courses/intern.html",
             activetab: 'courses',
             activedroptab: 'intern'
         })
-        .when('/courses/deletion', {
+        .when('/deletion', {
             templateUrl: "js/partials/courses/deletion.html",
             activetab: 'courses',
             activedroptab: 'deletion'
@@ -75,7 +75,7 @@ app.config(function($routeProvider, $locationProvider) {
         })
 
 
-        .otherwise({redirectTo: '/courses/construction'});
+        .otherwise({redirectTo: '/construction'});
 
     $locationProvider.html5Mode(true);
 })

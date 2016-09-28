@@ -1,4 +1,4 @@
-app.controller("MainController",  function($scope, $route,  $location, $routeParams, $http, $templateCache) {
+app.controller("MainController",  function($scope, $route,  $location, $routeParams, $http, $templateCache, $timeout) {
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
@@ -9,27 +9,27 @@ app.controller("MainController",  function($scope, $route,  $location, $routePar
                           (current.activedroptab === 'intern') ? $scope.availableCourses[2] :
                           $scope.availableCourses[3]
         //DATA FETCH
-        $http.get('/courses/course')
+        $http.get('/courses')
             .then(function successCallback(courseInfo) {
                 $scope.coursesData = courseInfo.data;
             }, function errorCallback(err) {
                 console.log('error', err);
             });
     });
-
-    $scope.triggerMenu = function() {
-        $scope.actionTriggered = !$scope.actionTriggered;
+    $scope.actionTriggered = false;
+    $scope.triggerMenu = function(courseId) {
+        if (courseId) {
+            $scope.actionTriggered = !$scope.actionTriggered;
+        }
     }
     $scope.availableCourses = [
-            {id: '1', name: 'construction'},
-            {id: '2', name: 'public'},
-            {id: '3', name: 'intern'},
-            {id: '4', name: 'deletion'}
+            {type: 'ow', name: 'construction'},
+            {type: 'gw', name: 'public'},
+            {type: 'rw', name: 'intern'},
+            {type: 'bw', name: 'deletion'}
     ];
-    $scope.coursesData = [];
-    $scope.courseData = []
     $scope.createCourse = function () {
-        $http.post('/courses/create', self.courseData)
+        $http.post('/courses', self.courseData)
             .then(function successCallback() {
                 var currentPageTemplate = $route.current.templateUrl;
                 $templateCache.remove(currentPageTemplate);
@@ -41,13 +41,15 @@ app.controller("MainController",  function($scope, $route,  $location, $routePar
     }
     $scope.removeCourse = function(courseId, $index) {
         $scope.coursesData.splice($index, 1);
-        $http.delete('/courses/remove/' + courseId);
+        $http.delete('/courses/' + courseId);
     };
     $scope.updatePlaceCourse = function(courseId, kindOfItem) {
-        var currentPageTemplate = $route.current.templateUrl;
-        $templateCache.remove(currentPageTemplate);
-        $route.reload();
-        $http.put('/courses/update/' + courseId, {place: kindOfItem, courseId})
+        $timeout(function () {
+            var currentPageTemplate = $route.current.templateUrl;
+            $templateCache.remove(currentPageTemplate);
+            $route.reload();
+        }, 100);
+        $http.put('/updatePlace/' + courseId, {place: kindOfItem, courseId})
             .then(function successCallback(courseInfo) {
                 $scope.coursesData = courseInfo.data;
             }, function errorCallback(err) {

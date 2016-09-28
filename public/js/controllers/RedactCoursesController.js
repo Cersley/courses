@@ -5,7 +5,7 @@ app.controller("RedactCoursesController",
     $scope.$routeParams = $routeParams;
     $scope.$on('$routeChangeSuccess', function(event, current) {
         $scope.paramId = $route.current.params.courseId;
-        $http.get('/courses/redactCourse/' + $scope.paramId)
+        $http.get('/courses/' + $scope.paramId)
             .then(function successCallback(courseOne) {
                 $scope.courseData = courseOne.data;
             }, function errorCallback(err) {
@@ -23,12 +23,12 @@ app.controller("RedactCoursesController",
         if (typeOfCourse === undefined) {
             $location.url('/courses/construction');
         } else {
-            $http.put('/courses/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
+            $http.put('/addTypes/' + courseId, {types: typeOfCourse, courseId: courseId})
         }
     }
     $scope.addSynopsisOfCourse = function(titleOfCourse, subtitleOfCourse,
                                         whoOfCourse, whyOfCourse, whatOfCourse, courseId) {
-        $http.put('/courses/addSynopsis/' + courseId,
+        $http.put('/addSynopsis/' + courseId,
             {
                 title: titleOfCourse,
                 subtitle: subtitleOfCourse,
@@ -41,7 +41,7 @@ app.controller("RedactCoursesController",
     }
     $scope.addDiscoverOfCourse = function(purposeGoal, learningContent, activites, learningCourse,
                                    learningGoals, courseId) {
-        $http.put('/courses/addDiscover/' + courseId,
+        $http.put('/addDiscover/' + courseId,
             {
                 purposeGoal: purposeGoal,
                 learningContent: learningContent,
@@ -52,7 +52,7 @@ app.controller("RedactCoursesController",
             }
         )
     }
-    $http.get('/courses/uploads')
+    $http.get('/uploads')
         .then(function successCallback(img) {
             $scope.uploads = img.data;
         }, function errorCallback(err) {
@@ -60,16 +60,13 @@ app.controller("RedactCoursesController",
         });
     $scope.removeResourse = function(resourseId, $index) {
         $scope.uploads.splice($index, 1);
-        $http.delete('/courses/removeResourse/' + resourseId);
+        $http.delete('/uploads/' + resourseId);
     };
-    // $scope.addImg = function (uploadResourses) {
-    //     $http.put('/courses/addImg/' + $scope.paramId, {upload: uploadResourses});
-    // }
     $scope.addImg = function (uploadResourses) {
         if (Object.keys($scope.uploaded).length === 0) {
             $location.url('/redactCourse/' + paramId);
         } else {
-            $http.put('/courses/addImg/' + $scope.paramId, {upload: uploadResourses});
+            $http.put('/addImg/' + $scope.paramId, {upload: uploadResourses});
         }
     }
     $scope.uploaded = {};

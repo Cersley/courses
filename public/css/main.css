@@ -187,20 +187,20 @@ main .wrapper {
 	height: 1000px;
 	border: 1px solid #d9dfe5;
 }
-.courses ul  {
+.courses .course-menu  {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	display: flex;
 	border-bottom: 1px solid #d9dfe5;
 }
-.courses ul a {
+.courses .course-menu a {
 	display: inline-block;
 	height: 95px;
 	color: #90969b;
 	font-size: 1.1em;
 }
-.courses ul li {
+.courses .course-menu li {
 	line-height:97px;
 	display: inline-block;
 	padding: 0 30px;
@@ -214,6 +214,7 @@ main .wrapper {
 }
 .courses .active li {
 	background-color: #fff;
+	color: black;
 	z-index: 2;
 }
 .courses section {
@@ -224,7 +225,7 @@ main .wrapper {
 	margin: 12px;
 	border-radius: 4px;
 }
-.courses section div {
+.courses section .course-item {
 	background-color: #f6f8f9;
 	width: 100%;
 	height: 100%;
@@ -243,7 +244,8 @@ main .wrapper {
 	margin: 0 0 20px 15px;
 	font-size: 0.9em;
 }
-.courses section a {
+.courses section .course-wrap {
+	position: relative;
 	width: 174px;
 	height: 220px;
 	text-decoration: none;
@@ -251,11 +253,7 @@ main .wrapper {
 	color: #2f3b4c;
 	border-radius: 4px;
 }
-.courses section a:hover {
-	text-decoration: none;
-	color: #262e3d;
-}
-.courses section a:hover div {
+.courses section .course-item:hover  {
 	background-color: #eaeced;
 }
 .courses section span {
@@ -277,7 +275,7 @@ main .wrapper {
 	padding: 0;
 	line-height: 30px;
 }
-.courses section:hover span {
+.courses section:hover .delete-course {
 	display: block;
 }
 .courses section span:hover {
@@ -285,9 +283,6 @@ main .wrapper {
 }
 .courses section select {
 	position: absolute;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
 	right: 4px;
 	bottom: 4px;
 	-webkit-appearance: none;
@@ -296,8 +291,14 @@ main .wrapper {
 	border: transparent;
 	padding: 3px 15px;
 	text-align: center;
-	background-color: transparent;
 	z-index: 2;
+}
+.courses section select{
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+	border: transparent;
 }
 .courses section .ow, .courses section .gw, .courses section .rw, .courses section .bw {
 	position: absolute;
@@ -321,6 +322,15 @@ main .wrapper {
 .courses section .bw {
 	background-color: #0000ff;
 }
+/*.courses section .dropdown-menu div {*/
+	/*display: inline-block;*/
+	/*border-radius: 50%;*/
+	/*width: 1.42857143em;*/
+	/*height: 1.42857143em;*/
+	/*top: 4px;*/
+	/*position: relative;*/
+	/*margin: 0 4px 0 0;*/
+/*}*/
 
 
 /*Setap course main*/
