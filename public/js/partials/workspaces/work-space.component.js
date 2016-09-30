@@ -2,7 +2,7 @@ angular
     .module('workSpace')
     .component('workSpace', {
         templateUrl: 'js/partials/workspaces/workspace.template.html',
-        controller: function WorkspaceController($location, $http, $anchorScroll, $timeout) {
+        controller: function WorkspaceController($location, $http, $anchorScroll, $timeout, $route) {
             var self = this;
             self.go = function (hash) {
                 if (self.selectType.$valid) {
@@ -113,7 +113,6 @@ angular
                 $http.get('/courseParam')
                     .then(function successCallback(course) {
                         self.courseParam = course.data;
-                        console.log(self.courseParam);
                     }, function errorCallback(err) {
                         console.log('error', err);
                     });

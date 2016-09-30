@@ -275,10 +275,11 @@
     .courses {
         height: inherit!important;
     }
-    .courses ul a {
+    .courses .course-menu a {
         font-size: 0.9em;
+        height: 60px;
     }
-    .courses ul li {
+    .courses .course-menu li {
         padding: 0 7px;
         line-height: 61px;
     }
@@ -491,7 +492,7 @@
         width: 159px;
         font-size: 1.1em;
     }
-    .courses ul li {
+    .courses .course-menu li {
         padding: 0 3px;
     }
     main .col-xs-12 {
