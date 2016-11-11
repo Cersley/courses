@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@angular/router": "^3.0.0",
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "bluebird": "^3.4.6",
