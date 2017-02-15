@@ -8,8 +8,8 @@ var pgp = require('pg-promise')(options);
 var connection = {
     host: 'localhost',
     port: 5432,
-    database: 'courses_editor',
-    user: 'yaroslav',
+    database: 'courses',
+    user: 'user',
     password: '123'
 };
 var db = pgp(connection);
