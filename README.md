@@ -1,2 +1,7 @@
-You cannot run this app without a database.
-Sorry :(
+CREATE USER user WITH PASSWORD '123';
+CREATE DATABASE courses OWNER user;
+psql courses < db 
+
+npm install
+=> localhost:3000
+ 
