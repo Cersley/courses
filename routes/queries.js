@@ -9,7 +9,7 @@ var connection = {
     host: 'localhost',
     port: 5432,
     database: 'courses',
-    user: 'user',
+    user: 'cersley',
     password: '123'
 };
 var db = pgp(connection);
