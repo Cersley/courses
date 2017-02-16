@@ -1,144 +1,142 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <base href="/">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Заголовок</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заголовок</title>
     <link rel="stylesheet" href="/../../libs/font-awesome/css/font-awesome.min.css">
- 	<link href="../../libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../../libs/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/fonts.css">
-	<link rel="stylesheet" href="../../css/main.css">
-	<link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/media.css">
 </head>
+
 <body ng-app="myApp" ng-controller="MainController" ng-cloak>
     <div class="container main">
         <div class="row">
-            <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1 col-sm-1 col-xs-1">
-                            <span class="logo">
+            <div>
+                <header>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <span class="logo">
                                 <img src="img/logo.png" alt="logo">
                             </span>
-                        </div>
-                        <div class="col-md-11 col-sm-11 col-xs-12">
-                            <ul>
-                                <a href="/courses/construction"
-                                   id="setup"
-                                   ng-class="{active: $route.current.activetab === 'courses'}">
-                                    <li>My Panel</li>
-                                </a>
-                                <a href="/workspace"
-                                   ng-click="createCourse()"
-                                   ng-class="{active: $route.current.activetab === 'workspace'}">
-                                    <li>{{addCourse}}</li>
-                                </a>
-                            </ul>
-                            <div class="user-log">
-                                <div class="img-user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></div>
-                                <a href="">a@a.com<i class="fa fa-caret-down" aria-hidden="true"></i></a>
                             </div>
-                            <div class="toggle-menu" ng-click="triggerMenu()">
-                                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                            <div class="col-md-11 col-sm-11 col-xs-12">
+                                <ul>
+                                    <a href="/courses/construction" id="setup" ng-class="{active: $route.current.activetab === 'courses'}">
+                                        <li>My Panel</li>
+                                    </a>
+                                    <a href="/workspace" ng-click="createCourse()" ng-class="{active: $route.current.activetab === 'workspace'}">
+                                        <li>{{addCourse}}</li>
+                                    </a>
+                                </ul>
+                                <div class="user-log">
+                                    <div class="img-user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></div>
+                                    <a href="">a@a.com<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="toggle-menu" ng-click="triggerMenu()">
+                                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </header>
-            <div class="clearfix"></div>
-            <main>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1 col-sm-1 main-bg" ng-class="{none: $route.current.activetab === 'redact', height: $route.current.activetab === 'redact' }">
-                            <aside ng-class="{open: actionTriggered}">
-                                <menu>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'courses'}">
-                                        <a href="/construction">
-                                            <i class="fa fa-clone fa-2x" aria-hidden="true"></i>
-                                            <p>Courses</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'workspace'}">
-                                        <a href="/workspace">
-                                            <i class="fa fa-clone fa-2x" aria-hidden="true"></i>
-                                            <p>Workspace</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus"
-                                         ng-class="{active: $route.current.activetab === 'users'}">
-                                        <a href="/allUsers">
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus" >
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="false"></i>
-                                            <p>Departments</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus">
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>My uploads</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus">
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Mobile</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus">
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Activity</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus">
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Settings</p>
-                                        </a>
-                                    </div>
-                                    <div class="menus" ng-class="{del: $route.current.activetab === 'redact'}">
-                                        <a>
-                                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                                            <p>Users</p>
-                                        </a>
-                                    </div>
-                                </menu>
-                            </aside>
-                        </div>
-                        <div class="col-md-11 col-sm-11 col-xs-12" ng-controller="MainController">
+                </header>
+                <div class="clearfix"></div>
+                <main>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 col-sm-1 main-bg" ng-class="{none: $route.current.activetab === 'redact', height: $route.current.activetab === 'redact' }">
+                                <aside ng-class="{open: actionTriggered}">
+                                    <menu>
+                                        <div class="menus" ng-class="{active: $route.current.activetab === 'courses'}">
+                                            <a href="/construction">
+                                                <i class="fa fa-clone fa-2x" aria-hidden="true"></i>
+                                                <p>Courses</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus" ng-class="{active: $route.current.activetab === 'workspace'}">
+                                            <a href="/workspace">
+                                                <i class="fa fa-clone fa-2x" aria-hidden="true"></i>
+                                                <p>Workspace</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus" ng-class="{active: $route.current.activetab === 'users'}">
+                                            <a href="/allUsers">
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>Users</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="false"></i>
+                                                <p>Departments</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>My uploads</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>Mobile</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>Activity</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>Settings</p>
+                                            </a>
+                                        </div>
+                                        <div class="menus" ng-class="{del: $route.current.activetab === 'redact'}">
+                                            <a>
+                                                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                                <p>Users</p>
+                                            </a>
+                                        </div>
+                                    </menu>
+                                </aside>
+                            </div>
+                            <div class="col-md-11 col-sm-11 col-xs-12" ng-controller="MainController">
                                 <div ng-view class="wrapper"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
-    </div>
-    <script src="libs/angular.min.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>-->
-    <script src="libs/angular-route.min.js"></script>
-    <script src="libs/ng-file-upload.min.js">
-    <script src="../../libs/jquery/jquery-3.1.0.min.js"></script>
-    <script src="../../js/common.js"></script>
-    <script src="../../js/controllers/MainController.js"></script>
-    <script src="../../js/controllers/RedactCoursesController.js"></script>
-    <script src="../../js/partials/users/user-list/user-list.module.js"></script>
-    <script src="../../js/partials/users/user-list/user-list.component.js"></script>
-    <script src="../../js/partials/users/user-info/user-info.module.js"></script>
-    <script src="../../js/partials/users/user-info/user-info.component.js"></script>
-    <script src="../../js/partials/users/add-user/add-user.module.js"></script>
-    <script src="../../js/partials/users/add-user/add-user.component.js"></script>
-    <script src="../../js/partials/workspaces/work-space.module.js"></script>
-    <script src="../../js/partials/workspaces/work-space.component.js"></script>
+        <script src="libs/angular.min.js"></script>
+        <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
+        <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>-->
+        <script src="libs/angular-route.min.js"></script>
+        <script src="libs/ng-file-upload.min.js">
+            < script src = "../../libs/jquery/jquery-3.1.0.min.js" >
+        </script>
+        <script src="../../js/common.js"></script>
+        <script src="../../js/controllers/MainController.js"></script>
+        <script src="../../js/controllers/RedactCoursesController.js"></script>
+        <script src="../../js/partials/users/user-list/user-list.module.js"></script>
+        <script src="../../js/partials/users/user-list/user-list.component.js"></script>
+        <script src="../../js/partials/users/user-info/user-info.module.js"></script>
+        <script src="../../js/partials/users/user-info/user-info.component.js"></script>
+        <script src="../../js/partials/users/add-user/add-user.module.js"></script>
+        <script src="../../js/partials/users/add-user/add-user.component.js"></script>
+        <script src="../../js/partials/workspaces/work-space.module.js"></script>
+        <script src="../../js/partials/workspaces/work-space.component.js"></script>
 </body>
+
 </html>
